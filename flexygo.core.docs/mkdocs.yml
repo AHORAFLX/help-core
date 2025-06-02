@@ -1,0 +1,45 @@
+site_name: Flexygo Core
+site_author: Flexygo
+copyright: Copyright © 2025 Flexygo
+theme:
+  favicon: images/favicon.png
+  logo: images/logo.png
+  name: material
+  palette:
+  - scheme: slate
+    primary: black
+    accent: custom
+    toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  - scheme: default
+    toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+    primary: black
+    accent: custom
+  features:
+    - navigation.top
+    - content.code.copy
+
+extra_css:
+  - stylesheets/extra.css
+extra:
+  social:
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/flexygo
+      name: Flexygo Discord
+    - icon: fontawesome/brands/instagram
+      link: https://instagram.com/flexygo
+      name: Flexygo Instagram
+  generator: false
+nav:
+  - Inicio: index.md
+  - Despliegue:
+      - Kestrel: despliegue/kestrel.md
+      - IIS: despliegue/iis.md
+      - Docker: despliegue/docker.md
+  - Crear Producto:
+      - Plantilla: producto/plantilla.md
+      - NuGet: producto/nuget.md
+      - Test: producto/test.md

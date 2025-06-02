@@ -1,0 +1,8 @@
+:root {
+  --md-accent-fg-color: #2db7b0;
+  
+}
+
+.md-nav__item .md-nav__link--active, .md-nav__item .md-nav__link--active code {
+  color: #2db7b0 !important;
+}
