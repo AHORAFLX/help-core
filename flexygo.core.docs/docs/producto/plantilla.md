@@ -54,6 +54,7 @@ Tras instalar la plantilla, también puedes crear un nuevo producto **directamen
 
 !!! tip "Próximamente" 
     Esta funcionalidad estará disponible también en el instalador de Flexygo Core,  donde podrás crear nuevos productos fácilmente desde una interfaz gráfica ¡sin necesidad de usar comandos!
+
 ---
 
 ## 3. ¿Qué encontrarás en la solución generada?
@@ -69,6 +70,26 @@ Al crear un nuevo producto con la plantilla de Flexygo Core, se genera una soluc
 
 Así tendrás todo lo necesario para empezar a desarrollar y probar tu producto desde el primer momento.
 
+![Selector de perfil de ejecución en Visual Studio](../images/PerfilVS.png)
+<em class="caption">Selector de perfil de ejecución en Visual Studio</em>
+
+### Crear un producto desde Visual Studio
+
+Tras instalar la plantilla, también puedes crear un nuevo producto **directamente desde la interfaz de Visual Studio**:
+
+1. Abre Visual Studio.
+2. Haz clic en **Crear un nuevo proyecto**.
+3. Busca “Flexygo” en el cuadro de búsqueda.
+4. Selecciona la plantilla `Flexygo Product`.
+5. Introduce el nombre de tu producto y la ubicación donde quieres crearlo.
+6. Haz clic en **Crear**.
+
+![Crear nuevo producto Flexygo desde Visual Studio](../images/ProductoVS.png)
+<em class="caption">Selecciona la plantilla Flexygo en Visual Studio para crear tu producto desde la interfaz</em>
+
+!!! tip "Próximamente" 
+    Esta funcionalidad estará disponible también en el instalador de Flexygo Core,  donde podrás crear nuevos productos fácilmente desde una interfaz gráfica ¡sin necesidad de usar comandos!
+    
 ---
 
 ## 4. Pasos para comenzar a desarrollar
