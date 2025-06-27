@@ -24,6 +24,7 @@ theme:
 
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/center-images.css
 extra:
   social:
     - icon: fontawesome/brands/discord
@@ -33,6 +34,10 @@ extra:
       link: https://instagram.com/flexygo
       name: Flexygo Instagram
   generator: false
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
 nav:
   - Inicio: index.md
   - Despliegue:
@@ -42,4 +47,3 @@ nav:
   - Crear Producto:
       - Plantilla: producto/plantilla.md
       - NuGet: producto/nuget.md
-      - Test: producto/test.md
