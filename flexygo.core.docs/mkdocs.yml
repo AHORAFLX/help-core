@@ -2,8 +2,8 @@ site_name: Flexygo Core
 site_author: Flexygo
 copyright: Copyright © 2025 Flexygo
 theme:
-  favicon: images/favicon.png
-  logo: images/logo.png
+  favicon: images/logos/favicon.png
+  logo: images/logos/logo.png
   name: material
   language: es
   palette:
@@ -42,9 +42,12 @@ markdown_extensions:
 nav:
   - Inicio: index.md
   - Despliegue:
+      - Instalador: despliegue/instalador.md
       - Kestrel: despliegue/kestrel.md
       - IIS: despliegue/iis.md
       - Docker: despliegue/docker.md
   - Crear Producto:
+      - Requisitos previos: producto/requisitos.md
       - Plantilla: producto/plantilla.md
       - NuGet: producto/nuget.md
+      - Actualizar producto: producto/actualizadorproducto.md
