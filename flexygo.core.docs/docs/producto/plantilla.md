@@ -68,6 +68,9 @@ Al crear un nuevo producto con la plantilla de Flexygo Core, se genera una soluc
 - **Unit Tests**: Proyecto dedicado a los tests unitarios sobre la lógica de backend.
 - **Interface Tests**: Proyecto para tests automáticos de interfaz y flujos de usuario.
 
+Además, cada proyecto incluye un archivo .nuspec ya preparado con la configuración mínima necesaria para poder generar los paquetes NuGet correspondientes.
+Revisa estos archivos .nuspec y adáptalos si necesitas añadir dependencias, metadatos o personalizaciones adicionales para tu producto.
+
 Así tendrás todo lo necesario para empezar a desarrollar y probar tu producto desde el primer momento.
     
 ---
