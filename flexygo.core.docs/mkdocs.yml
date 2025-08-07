@@ -36,16 +36,28 @@ extra:
       name: Flexygo Instagram
   generator: false
 markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - md_in_html
+  - pymdownx.blocks.caption
   - admonition
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+plugins:
+  - glightbox
 nav:
   - Inicio: index.md
   - Despliegue:
-      - Instalador: despliegue/instalador.md
+      - Instalador: 
+        - Introducción: despliegue/instalador.md
+        - Instalación básica: despliegue/instalacionbasica.md
+        - Instalación avanzada: despliegue/instalacionavanzada.md
+        - Instalación Docker (WIP): despliegue/instalaciondocker.md
       - Actualizador: despliegue/actualizador.md
       - Kestrel: despliegue/kestrel.md
       - IIS: despliegue/iis.md
@@ -53,5 +65,5 @@ nav:
   - Crear Producto:
       - Requisitos previos: producto/requisitos.md
       - Plantilla: producto/plantilla.md
-      - Herramientas producto: producto/herramientaproducto.md
+      - Gestión producto: producto/gestionproducto.md
       - Extensión Visual Studio: producto/extension.md
