@@ -67,3 +67,8 @@ nav:
       - Plantilla: producto/plantilla.md
       - Gestión producto: producto/gestionproducto.md
       - Extensión Visual Studio: producto/extension.md
+  - CI/CD:
+      - Visión general: cicd/overview.md
+      - TeamCity: cicd/teamcity.md
+      - GitHub/GitLab : cicd/github-gitlab.md
+      - Azure DevOps: cicd/azure-devops.md
