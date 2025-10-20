@@ -33,7 +33,7 @@
 > ```
 ---
 
-## 2) Ejemplo `docker-compose.yml` (fragmento)
+## 2) Ejemplo `docker-compose.yml`
 
 ```yaml
 services:
@@ -86,38 +86,38 @@ volumes:
 
 ---
 
-# 3) Comportamiento al levantar nueva versión
+## 3) Comportamiento al levantar nueva versión
 
 - Lanza `docker compose up -d` con la nueva imagen.
 - Si la **versión de la app** > **versión de BD**, el **frontend entra en modo mantenimiento** automáticamente.
 
 ---
 
-# 4) Proceso de actualización (admin)
+## 4) Proceso de actualización
 
 1. Accede a **`/maintenance/update`**.
 2. Introduce el **`MAINT_TOKEN`** (mismo valor que en el *compose* del frontend).
 3. Al confirmar:
-   - Se leen las conexiones de `DbConnectionStrings` con `Active = 1` y `UpdateDataModel = 1`.
-   - Se descarga el paquete **NuGet** (usando `FLEXYGO_PACKAGES_ROOT`).
-   - Se aplican las **actualizaciones de todas las BDs** marcadas.
+    - Se leen las conexiones de `DbConnectionStrings` con `Active = 1` y `UpdateDataModel = 1`.
+    - Se descarga el paquete **NuGet** (usando `FLEXYGO_PACKAGES_ROOT`).
+    - Se aplican las **actualizaciones de todas las BDs** marcadas.
 4. Al finalizar:
-   - Se **desactiva** el modo mantenimiento.
-   - Se **redirige** al login.
+    - Se **desactiva** el modo mantenimiento.
+    - Se **redirige** al login.
 
 ---
 
-# 5) Checklist de diagnóstico rápido
+## 5) Checklist de diagnóstico rápido
 
-### DbConnectionStrings
+#### DbConnectionStrings
 - `PackageId` correcto (sin `.Database`)
 - `NugetUrl` válido
 - `PreReleaseVersions` según corresponda
 - `Active = 1` y `UpdateDataModel = 1`
 
-### FLEXYGO_PACKAGES_ROOT
+#### FLEXYGO_PACKAGES_ROOT
 - Existe y es **escribible** en el contenedor backend  
 
-### MAINT_TOKEN
+#### MAINT_TOKEN
 - Definido en el **frontend** y coincide con el introducido en **`/maintenance/update`**
 
