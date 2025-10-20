@@ -58,7 +58,9 @@ nav:
         - Instalación básica: despliegue/instalacionbasica.md
         - Instalación avanzada: despliegue/instalacionavanzada.md
         - Instalación Docker (WIP): despliegue/instalaciondocker.md
-      - Actualizador: despliegue/actualizador.md
+      - Actualizador:
+        - Flujo actualización: despliegue/actualizador.md
+        - Docker: despliegue/actualizadordocker.md
       - Kestrel: despliegue/kestrel.md
       - IIS: despliegue/iis.md
       - Docker: despliegue/docker.md
