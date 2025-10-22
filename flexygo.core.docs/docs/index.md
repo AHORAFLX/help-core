@@ -1,5 +1,11 @@
 # Bienvenido a Flexygo Core
 
+!!! tip "Descarga del instalador"
+    Puedes descargar el **instalador oficial de Flexygo Core** para comenzar rápidamente con tu entorno de desarrollo.  
+    👉 [Descargar instalador](../files/flexygoinstallercore.rar)
+
+---
+
 ## 🔄 Migración desde Flexygo clásico
 
 Este nuevo proyecto, **Flexygo Core**, es una evolución natural del anterior Flexygo basado en .NET Framework.
