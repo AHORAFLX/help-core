@@ -2,7 +2,7 @@
 
 !!! tip "Descarga del instalador"
     Puedes descargar el **instalador oficial de Flexygo Core** para comenzar rápidamente con tu entorno de desarrollo.  
-    👉 [Descargar instalador](../files/flexygoinstallercore.rar)
+    👉 [Descargar instalador](./files/flexygoinstallercore.rar)
 
 ---
 
