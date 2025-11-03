@@ -6,11 +6,11 @@
 
 ---
 
-## 🔄 Migración desde Flexygo clásico
+## 🔄 Evolución desde Flexygo
 
 Este nuevo proyecto, **Flexygo Core**, es una evolución natural del anterior Flexygo basado en .NET Framework.
 
-Hasta ahora, el modelo clásico de Flexygo consistía en una **única aplicación web** que contenía tanto el frontend como el backend y todas sus librerías dentro del mismo sitio.
+Hasta ahora, el modelo de Flexygo consistía en una **única aplicación web** que contenía tanto el frontend como el backend y todas sus librerías dentro del mismo sitio.
 
 A partir de **Flexygo Core**, hemos rediseñado completamente la arquitectura usando **.NET 9**, y ahora se divide en:
 
