@@ -22,35 +22,68 @@ Antes de empezar, asegúrate de tener instalado:
 Copia este contenido en un archivo llamado `docker-compose.yml`:
 
 ```yaml
-version: "3.8"
-
 services:
-  db:
-    image: dockerbeta.ahorabh.com/flexygo-db
-    container_name: flexygo-db
-    ports:
-      - "1433:1433"
+  flx-frontend:
+    image: flexygo/flexygo-frontend
+    restart: unless-stopped
     environment:
-      - SA_PASSWORD=TuPasswordSegura123
-      - ACCEPT_EULA=Y
-
-  backend:
-    image: dockerbeta.ahorabh.com/flexygo-backend
-    container_name: flexygo-backend
-    depends_on:
-      - db
+      ASPNETCORE_ENVIRONMENT: "Development"
     ports:
-      - "5000:80"
+      - "${FRONTEND_PORT}:8080"
+    volumes:
+      - flx-front-conf:/app/conf
+      - flx-front-custom:/app/custom
+    networks:
+      - flx-front-network
+    depends_on:
+      - flx-backend
+
+  flx-backend:
+    image: flexygo/flexygo-backend
+    restart: unless-stopped
     environment:
-      - ConnectionStrings__DefaultConnection=Server=db;Database=Flexygo;User=sa;Password=TuPasswordSegura123
-
-  frontend:
-    image: dockerbeta.ahorabh.com/flexygo-frontend
-    container_name: flexygo-frontend
-    depends_on:
-      - backend
+      ASPNETCORE_ENVIRONMENT: "Development"
+      MSSQL_SA_PASSWORD: "${SQL_PASSWORD}"
     ports:
-      - "8080:80"
+      - "60952:8080"
+    volumes:
+      - flx-back-conf:/app/conf
+      - flx-back-custom:/app/custom
+    networks:
+      - flx-front-network
+      - flx-back-network
+    depends_on:
+      flx-db:
+        condition: service_healthy
+
+  flx-db:
+    image: flexygo/flexygo-db
+    restart: unless-stopped
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "${SQL_PASSWORD}"
+      MSSQL_PID: "Evaluation"
+    networks:
+      - flx-back-network
+    volumes:
+      - flx-db-data:/var/opt/mssql/data/
+      - flx-db-log:/var/opt/mssql/log/
+      - flx-db-secrets:/var/opt/mssql/secrets/
+
+networks:
+  flx-front-network:
+    driver: bridge
+  flx-back-network:
+    driver: bridge
+
+volumes:
+    flx-front-conf:
+    flx-front-custom:
+    flx-back-conf:
+    flx-back-custom:
+    flx-db-data:
+    flx-db-log:
+    flx-db-secrets:
 ```
 
 > **⚠️ Importante:** Cambia `TuPasswordSegura123` por una contraseña real y segura para SQL Server.
@@ -73,9 +106,9 @@ Esto descargará las imágenes necesarias y levantará todo automáticamente.
 
 Una vez finalizado el arranque:
 
-- **Frontend**: [http://localhost:8080](http://localhost:8080)
-- **Backend (API)**: [http://localhost:5000](http://localhost:5000)
-- **Base de datos (SQL Server)**: puerto `1433`, usuario `sa`, contraseña la que hayas definido
+- **Frontend**: [http://localhost:${FRONTEND_PORT}](http://localhost:${FRONTEND_PORT})
+- **Backend (API)**: [http://localhost:60952/swagger](http://localhost:60952/swagger)
+- **Base de datos (SQL Server)**: usuario `sa`, contraseña la que hayas definido
 
 ---
 

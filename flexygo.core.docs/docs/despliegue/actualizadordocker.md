@@ -5,9 +5,13 @@
 - **Tabla `DbConnectionStrings`** (en la BD de configuración) con:
     - `ConnStringId` (ej.: `ConfConnectionString` / `DataConnectionString`)
     - `PackageId` **sin** el sufijo `.Database` (ej.: `Flexygo.Conf`)
-    - `NugetUrl` del feed NuGet (ej.: `https://nuget.ahorabh.com/v3/index.json`)
-    - `PreReleaseVersions` (`0`/`1` según necesites prereleases)
     - `Active = 1` y `UpdateDataModel = 1` para las conexiones que se deben actualizar
+
+- **Tabla `Settings`** (en la BD de configuración) con:
+    - `AutoUpdateURL` — URL del feed NuGet (ej.: https://nuget.ahorabh.com/v3/index.json)
+    - `AutoUpdateNugetUser` — usuario del feed (si requiere credenciales)
+    - `AutoUpdateNugetPassword` — contrasena del feed (si requiere credenciales)
+    - `AutoUpdateBeta` — 0/1 para permitir versiones prerelease
 
 - **Docker Compose**:
     - En **backend**:
@@ -111,9 +115,12 @@ volumes:
 
 #### DbConnectionStrings
 - `PackageId` correcto (sin `.Database`)
-- `NugetUrl` válido
-- `PreReleaseVersions` según corresponda
 - `Active = 1` y `UpdateDataModel = 1`
+
+### Settings
+- `AutoUpdateURL` valido
+- `AutoUpdateNugetUser` / `AutoUpdateNugetPassword` definidos si el feed requiere credenciales
+- `AutoUpdateBeta` segun necesites prerelease
 
 #### FLEXYGO_PACKAGES_ROOT
 - Existe y es **escribible** en el contenedor backend  
