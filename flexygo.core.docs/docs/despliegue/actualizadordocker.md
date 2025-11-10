@@ -118,7 +118,7 @@ volumes:
 - `Active = 1` y `UpdateDataModel = 1`
 
 ### Settings
-- `AutoUpdateURL` valido
+- `AutoUpdateURL` valido y accesible desde los contenedores
 - `AutoUpdateNugetUser` / `AutoUpdateNugetPassword` definidos si el feed requiere credenciales
 - `AutoUpdateBeta` segun necesites prerelease
 
