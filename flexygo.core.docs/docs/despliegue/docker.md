@@ -1,14 +1,16 @@
 # Despliegue con Docker
 
-Flexygo Core puede desplegarse fácilmente en contenedores Docker mediante un archivo `docker-compose.yml` que agrupa las tres imágenes necesarias:
+Flexygo Core puede desplegarse fácilmente en contenedores Docker mediante un archivo `docker-compose.yml`. Normalmente intervienen los siguientes servicios:
 
-- `flexygo-db` (base de datos SQL Server)
-- `flexygo-backend` (Web API)
 - `flexygo-frontend` (interfaz web)
+- `flexygo-backend` (Web API)
+- `flexygo-db` (SQL Server) **opcional** ~ solo para demos o pruebas rápidas
+
+> 🧠 **Recomendación**: para **producción** o entornos serios, usa **SQL Server fuera de Docker**. Ganarás en rendimiento, herramientas y opciones.
 
 ---
 
-## 🚀 Requisitos
+## ✅ Requisitos
 
 Antes de empezar, asegúrate de tener instalado:
 
@@ -18,8 +20,9 @@ Antes de empezar, asegúrate de tener instalado:
 ---
 
 ## 🛠️ Paso 1: Crear el archivo `docker-compose.yml`
-
+### Docker-compose con BD
 Copia este contenido en un archivo llamado `docker-compose.yml`:
+
 
 ```yaml
 services:
@@ -85,12 +88,114 @@ volumes:
     flx-db-log:
     flx-db-secrets:
 ```
+> 🔐 **Usa contrasenas complejas**. SQL Server impone requisitos de complejidad.
+### Conectar a SQL Server del contenedor desde tu Management (SSMS/Azure Data Studio)
 
-> **⚠️ Importante:** Cambia `TuPasswordSegura123` por una contraseña real y segura para SQL Server.
+Si quieres entrar a la BD del contenedor desde tu equipo (SSMS, Azure Data Studio, etc.), publica el puerto del contenedor:
+
+```yaml
+  flx-db:
+    ports:
+      - "14333:1433"   # host:contenedor
+```
+
+### Cómo conectarte
+
+- **Servidor**: `localhost,14333`  
+- **Usuario**: `sa`  
+- **Contraseña**: la de `${SQL_PASSWORD}` del `.env`  
+
+### Docker-compose sin BD
+
+```yaml
+services:
+  flx-frontend:
+    image: flexygo/flexygo-frontend
+    restart: unless-stopped
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - MAINT_TOKEN=${MAINT_TOKEN}
+    ports:
+      - "${FRONTEND_PORT}:8080"
+    volumes:
+      - flx-front-conf:/app/conf
+      - flx-front-custom:/app/custom
+    networks:
+      - flx-front-network
+    depends_on:
+      flx-backend:
+        condition: service_healthy
+
+  flx-backend:
+    image: flexygo/flexygo-backend
+    restart: unless-stopped
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__ConfConnectionString=${ConnectionStrings__ConfConnectionString}
+      - ConnectionStrings__DataConnectionString=${ConnectionStrings__DataConnectionString}  
+      - FLEXYGO_PACKAGES_ROOT=/var/lib/flexygo/packages
+    ports:
+      - "${BACKEND_PORT}:8080"
+    volumes:
+      - flx-back-conf:/app/conf
+      - flx-back-custom:/app/custom
+    networks:
+      - flx-front-network
+      - flx-back-network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://flx-backend:8080/api/backend/Sys/ApplicationStatus || exit 1"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+      start_period: 3s
+networks:
+  flx-front-network:
+    driver: bridge
+  flx-back-network:
+    driver: bridge
+volumes:
+    flx-front-conf:
+    flx-front-custom:
+    flx-back-conf:
+    flx-back-custom:
+```
 
 ---
 
-## ▶️ Paso 2: Levantar todo el entorno
+## 📁 Paso 2: Crea el ".env"
+
+### Que es y para que sirve el fichero .env
+
+El fichero .env guarda variables de entorno (pares VAR=valor) para no hardcodear datos en el docker-compose.yml.  
+Docker Compose lo lee automaticamente si esta en la misma carpeta y permite:
+
+- Reutilizar valores con ${VAR} en el YAML (puertos, cadenas de conexion, etc.).
+- Cambiar configuraciones por entorno sin editar el compose (solo cambias .env).
+- Mantener credenciales fuera del repositorio (no subir .env a git).
+
+Crea un archivo ".env" en la misma carpeta que tu "docker-compose.yml":
+
+```dotenv
+# Puertos expuestos
+FRONTEND_PORT=3200
+BACKEND_PORT=60952
+
+# Entorno .NET
+ASPNETCORE_ENVIRONMENT=Development
+
+# DB en contenedor (solo demos)
+SQL_PASSWORD=TuPasswordSegura123!
+
+# DB externa (si usas connection strings directas)
+ConnectionStrings__ConfConnectionString=Server=host.docker.internal;Initial Catalog=DatabaseName_IC;User ID=sa;Password=-a123456;TrustServerCertificate=True;Encrypt=False;
+ConnectionStrings__DataConnectionString=Server=host.docker.internal;Initial Catalog=DatabaseName_I;User ID=sa;Password=-a123456;TrustServerCertificate=True;Encrypt=False;
+
+# Token mantenimiento (necesario para actualizar la BD)
+MAINT_TOKEN=-aZ123456
+```
+---
+
+## ▶️ Paso 3: Levantar todo el entorno
 
 En el mismo directorio donde tengas el archivo `docker-compose.yml`, ejecuta:
 
