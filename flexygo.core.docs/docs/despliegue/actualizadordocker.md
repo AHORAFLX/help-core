@@ -5,18 +5,17 @@
 - **Tabla `DbConnectionStrings`** (en la BD de configuración) con:
     - `ConnStringId` (ej.: `ConfConnectionString` / `DataConnectionString`)
     - `PackageId` **sin** el sufijo `.Database` (ej.: `Flexygo.Conf`)
-    - `Active = 1` y `UpdateDataModel = 1` para las conexiones que se deben actualizar
+    - `Active = 1` y `UpdateDataModel = 1` para las conexiones que se deben actualizar.
 
 - **Tabla `Settings`** (en la BD de configuración) con:
-    - `AutoUpdateURL` — URL del feed NuGet (ej.: https://nuget.ahorabh.com/v3/index.json)
-    - `AutoUpdateNugetUser` — usuario del feed (si requiere credenciales)
-    - `AutoUpdateNugetPassword` — contrasena del feed (si requiere credenciales)
-    - `AutoUpdateBeta` — 0/1 para permitir versiones prerelease
+    - `AutoUpdateURL` — URL del feed NuGet (ej.: https://nuget.ahorabh.com/v3/index.json).
+    - `AutoUpdateBeta` — 0/1 para permitir versiones prerelease.
 
 - **Docker Compose**:
     - En **backend**:
-        - Variable `FLEXYGO_PACKAGES_ROOT` apuntando a la **misma ruta** creada en el Dockerfile del backend (p. ej. `/var/lib/flexygo/packages`).
-        - **Healthcheck** para que el frontend espere a que el backend esté listo:
+      - En caso de usar un repositorio nuget con credenciales usar las variables `NUGET_USER` y `NUGET_PASSWORD`. 
+      - Variable `FLEXYGO_PACKAGES_ROOT` apuntando a la **misma ruta** creada en el Dockerfile del backend (p. ej. `/var/lib/flexygo/packages`).
+      - **Healthcheck** para que el frontend espere a que el backend esté listo:
             - El contenedor del backend debe tener `curl` instalado.
             - La ruta de health debe existir y devolver 200 (ver ejemplo en el punto 2).
     - En **frontend**: 
