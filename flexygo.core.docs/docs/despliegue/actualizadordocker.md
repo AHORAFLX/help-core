@@ -2,14 +2,14 @@
 
 ## 1) Prerrequisitos
 
-- **Tabla `DbConnectionStrings`** (en la BD de configuración) con:
-    - `ConnStringId` (ej.: `ConfConnectionString` / `DataConnectionString`)
-    - `PackageId` **sin** el sufijo `.Database` (ej.: `Flexygo.Conf`)
-    - `Active = 1` y `UpdateDataModel = 1` para las conexiones que se deben actualizar.
-
 - **Tabla `Settings`** (en la BD de configuración) con:
     - `AutoUpdateURL` — URL del feed NuGet (ej.: https://nuget.ahorabh.com/v3/index.json).
+    - `AutoUpdatePackageNamespace` — Namespace del producto que identifica todos los nugets. (ej.: de `CRMCORE.Conf.Database` sería **CRMCORE**).
     - `AutoUpdateBeta` — 0/1 para permitir versiones prerelease.
+- **Tabla `DbConnectionStrings`** (en la BD de configuración) con:
+    - `ConnStringId` (ej.: `ConfConnectionString` / `DataConnectionString`)
+    - `PackageDbName` **sin** el prefijo `ProductName` **ni** el sufijo `Database`, solo la parte intermedia (ej.: `Conf`) el resto se concatena con el setting `AutoUpdatePackageNamespace` y .Database.
+    - `Active = 1` y `UpdateDataModel = 1` para las conexiones que se deben actualizar.
 
 - **Docker Compose**:
     - En **backend**:
