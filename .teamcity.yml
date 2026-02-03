@@ -1,23 +1,22 @@
 jobs:
   Docs:
     name: Flexygo Core Docs
-    # Requisitos de agente (Windows)
     runs-on:
       self-hosted:
-        - name: windows agent
-          requirement: matches
+        - requirement: matches
+          name: Windows requirement
           parameter: teamcity.agent.jvm.os.name
-          value: "^Windows.*"
-
+          value: ^Windows.*
     steps:
       - type: script
         name: Generar documentación
-        script-content: |
-          mkdocs build -f flexygo.core.docs/mkdocs.yml -d Docs_Core
-
+        script-content: mkdocs build -f flexygo.core.docs/mkdocs.yml -d Docs_Core
       - type: script
         name: Publicar documentación
-        script-content: |
+        script-content: >-
           rmdir /S /Q "C:\TESTPUB\WWWROOT\Docs_Core"
+
           mkdir "C:\TESTPUB\WWWROOT\Docs_Core"
-          xcopy flexygo.core.docs\Docs_Core "C:\TESTPUB\WWWROOT\Docs_Core" /E /I /Y
+
+          xcopy flexygo.core.docs\Docs_Core "C:\TESTPUB\WWWROOT\Docs_Core" /E /I
+          /Y
