@@ -2,7 +2,7 @@ jobs:
   Docs:
     name: Flexygo Core Docs
     # Requisitos de agente (Windows)
-    run-on:
+    runs-on:
       self-hosted:
         - name: windows agent
           requirement: matches
