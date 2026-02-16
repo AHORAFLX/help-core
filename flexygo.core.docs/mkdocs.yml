@@ -54,6 +54,7 @@ plugins:
   - glightbox
 nav:
   - Inicio: index.md
+  - Trabajando con Core: working-with-core.md
   - Despliegue:
       - Instalador: 
         - Introducción: despliegue/instalador.md

@@ -1,6 +1,11 @@
+
 :root {
   --md-accent-fg-color: #2db7b0;
-  
+}
+
+/* Hide 'Trabajando con Core' from sidebar navigation */
+.md-nav__item:has(> .md-nav__link[href*="working-with-core"]) {
+  display: none !important;
 }
 
 .md-nav__item .md-nav__link--active, .md-nav__item .md-nav__link--active code {
