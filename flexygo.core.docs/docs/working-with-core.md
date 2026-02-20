@@ -24,7 +24,9 @@ Una vez abierto el proyecto te preguntarás como iniciar flexygo, ya que ahora s
 
 - En la categoría **Configurar proyectos de Inicio** dentro de Propiedades comunes seleccionamos **Varios proyectos de inicio**
 
-- Debes buscar **Flexygo.Backend** y **Flexygo.Frontend** y situarlos los primeros, en ese mismo order, utilizando las flechas para moverlos
+- Debes buscar **Flexygo.Backend** y **Flexygo.Frontend** y situarlos los primeros, en ese mismo order, seleccionando y utilizando los botones flecha para moverlos
+
+![](./images/working-with/arrows.png)
 
 - Una vez **Flexygo.Backend** y **Flexygo.Frontend** estén arriba del todo los dos primeros respectivamente debes marcar la acción de **Inicio** en estos
 
