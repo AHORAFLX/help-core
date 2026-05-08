@@ -1,0 +1,11 @@
+.md-typeset img {
+  display: block;
+  margin: 1.5em auto;
+}
+.md-typeset .caption {
+  display: block;
+  text-align: center;
+  font-size: 0.95em;
+  color: #888;
+  margin-bottom: 0.5em;
+}
