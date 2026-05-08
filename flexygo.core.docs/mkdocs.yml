@@ -1,29 +1,39 @@
-site_name: Flexygo Core
+﻿site_name: Flexygo Core
 site_author: Flexygo
 copyright: Copyright © 2025 Flexygo
 theme:
   favicon: images/logos/favicon.png
-  logo: images/logos/logo.png
+  logo: images/logos/fl.svg
   name: material
+  custom_dir: overrides
   language: es
   palette:
-  - scheme: slate
+  - scheme: darkmode
     primary: black
     accent: custom
     toggle:
-        icon: material/brightness-4
+        icon: material/weather-sunny
         name: Switch to light mode
   - scheme: default
     toggle:
-        icon: material/brightness-7 
+        icon: material/weather-night
         name: Switch to dark mode
     primary: black
     accent: custom
   features:
+    - navigation.instant
+    - navigation.instant.progress
     - navigation.top
+    - navigation.sections
+    - navigation.tabs
+    - toc.follow
+    - search.highlight
     - content.code.copy
+    - content.code.annotate
+    - content.tooltips
 
 extra_css:
+  - stylesheets/template.css
   - stylesheets/extra.css
   - stylesheets/center-images.css
 extra:
@@ -37,6 +47,10 @@ extra:
   generator: false
 markdown_extensions:
   - attr_list
+  - abbr
+  - pymdownx.snippets:
+      auto_append:
+        - docs/includes/abbreviations.md
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -48,32 +62,48 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
 plugins:
   - search:
       lang: es
   - glightbox
 nav:
   - Inicio: index.md
-  - Trabajando con Core: working-with-core.md
+  # working-with-core.md oculta via CSS, NO en nav
   - Despliegue:
-      - Instalador: 
-        - Introducción: despliegue/instalador.md
-        - Instalación básica: despliegue/instalacionbasica.md
-        - Instalación avanzada: despliegue/instalacionavanzada.md
-        - Instalación Docker (WIP): despliegue/instalaciondocker.md
+      - Requisitos del sistema: despliegue/requisitos.md
+      - Instalador:
+          - Introducción: despliegue/instalador.md
+          - Despliegue: despliegue/instalacion-despliegue.md
+          - Desarrollo: despliegue/instalacion-desarrollo.md
+          - Migración: despliegue/instalacion-migracion.md
+          - Desinstalar: despliegue/desinstalar.md
+      - Asistente de configuración:
+          - Configuración: despliegue/configuracion.md
+          - Referencia appsettings.json: despliegue/referencia-appsettings.md
       - Actualizador:
-        - Flujo actualización: despliegue/actualizador.md
-        - Docker: despliegue/actualizadordocker.md
-      - Kestrel: despliegue/kestrel.md
-      - IIS: despliegue/iis.md
+          - Flujo de actualización: despliegue/actualizador.md
+          - Actualización Docker: despliegue/actualizadordocker.md
       - Docker: despliegue/docker.md
-  - Crear Producto:
-      - Requisitos previos: producto/requisitos.md
+      - Kestrel: despliegue/kestrel.md
+  - Desarrollo de producto:
+      - Requisitos: producto/requisitos.md
       - Plantilla: producto/plantilla.md
-      - Gestión producto: producto/gestionproducto.md
-      - Extensión Visual Studio: producto/extension.md
+      - Gestión de producto: producto/gestionproducto.md
+      - Extensiones IDE: producto/extension.md
+      - Personalización: producto/personalizacion.md
+      - MCP:
+          - Prerrequisitos: mcp/prerequisitos.md
+          - Uso básico: mcp/uso.md
+          - Configuración: mcp/configuracion.md
+          - Herramientas: mcp/herramientas.md
+          - Tips con Copilot: mcp/tips-copilot.md
   - CI/CD:
       - Visión general: cicd/overview.md
       - TeamCity: cicd/teamcity.md
-      - GitHub/GitLab : cicd/github-gitlab.md
+      - GitHub/GitLab: cicd/github-gitlab.md
       - Azure DevOps: cicd/azure-devops.md
+  - Solución de Problemas:
+      - Despliegue: soluciones/despliegue.md
+      - MCP: soluciones/mcp.md

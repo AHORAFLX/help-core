@@ -1,18 +1,20 @@
-# Dessarrollo en flexygo
+# Desarrollo en Flexygo
 
 ## Ramas de Core
 
 Para empezar a trabajar debes tener en cuenta que estamos trabajando sobre las ramas `flexygo-core-develop` y `flexygo-core-master`.
 
-Situate sobre la que debas.
+Sitúate sobre la que debas.
 
 ## Abrir la solución
 
-Una vez en la rama podrás ver que la estructura de ficheros ahora es algo diferente, dividiendose en backend y frontend, es por ello que tienes que abrir la solución que contiene a ambas en `C:\Codigo GIT\Flexygo\flexygo\Flexygo.sln`.
+> **Nota:** Sustituye `{REPO_ROOT}` por la ruta local donde hayas clonado el repositorio de Flexygo.
+
+Una vez en la rama podrás ver que la estructura de ficheros ahora es algo diferente, dividiéndose en backend y frontend, es por ello que tienes que abrir la solución que contiene a ambas en `{REPO_ROOT}\Flexygo.sln`.
 
 ## Generar links
 
-Mientras esperamos a que la solución se abra, o una vez ya abierta, ejecutamos el archivo `C:\Codigo GIT\Flexygo\flexygo\GenerarLinks.bat`, ten en cuenta que te pedirá permisos de administrador.
+Mientras esperamos a que la solución se abra, o una vez ya abierta, ejecutamos el archivo `{REPO_ROOT}\GenerarLinks.bat`, ten en cuenta que te pedirá permisos de administrador.
 
 ## Iniciar el proyecto
 
@@ -24,7 +26,7 @@ Una vez abierto el proyecto te preguntarás como iniciar flexygo, ya que ahora s
 
 - En la categoría **Configurar proyectos de Inicio** dentro de Propiedades comunes seleccionamos **Varios proyectos de inicio**
 
-- Debes buscar **Flexygo.Backend** y **Flexygo.Frontend** y situarlos los primeros, en ese mismo order, seleccionando y utilizando los botones flecha para moverlos
+- Debes buscar **Flexygo.Backend** y **Flexygo.Frontend** y situarlos los primeros, en ese mismo orden, seleccionando y utilizando los botones flecha para moverlos
 
 ![](./images/working-with/arrows.png)
 
@@ -43,8 +45,8 @@ Una vez abierto el proyecto te preguntarás como iniciar flexygo, ya que ahora s
 
 En core puedes iniciar el proyecto sin añadir las BBDDs al fichero de configuración, en cuyo caso se te pedirán mediante el asistente de inicio de flexygo tal que así:
 
-![](./images/working-with/assitant.png)
+![](./images/working-with/assistant.png)
 
-En el caso de que quisieras añadirlas antes de iniciar, debes saber que ya no se utiliza el `web.config`  ahora debes utilizar el fichero `appsettings.json` del backend. Y se añadirían en la sección de ConnectionStrings coom siempre, tal y como se ve en la imagen.
+En el caso de que quisieras añadirlas antes de iniciar, debes saber que ya no se utiliza el `web.config` ahora debes utilizar el fichero `appsettings.json` del backend. Y se añadirían en la sección de ConnectionStrings como siempre, tal y como se ve en la imagen.
 
 ![](./images/working-with/backend.png)

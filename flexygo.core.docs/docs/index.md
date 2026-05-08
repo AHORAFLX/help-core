@@ -1,4 +1,4 @@
-# Bienvenido a Flexygo Core
+﻿# Bienvenido a Flexygo Core
 
 !!! tip "Descarga del instalador"
     Puedes descargar el **instalador oficial de Flexygo Core** para comenzar rápidamente con tu entorno de desarrollo.  
@@ -33,8 +33,8 @@ Con esta base, estamos apostando por **modernizar todo el ecosistema Flexygo**, 
 
 Tienes varias opciones para ejecutar o desplegar tu solución basada en Flexygo Core:
 
-- **[IIS (Internet Information Services)](despliegue/iis.md)**  
-  Ideal para entornos Windows, usando nuestro instalador personalizado que automatiza toda la configuración.
+- **[Instalador](despliegue/instalador.md)**  
+  Ideal para entornos Windows. Incluye modos IIS básico, IIS avanzado y Docker vía installer. Automatiza toda la configuración.
 
 - **[Docker](despliegue/docker.md)**  
   Perfecto para despliegue en la nube, entornos Linux o soluciones automatizadas con contenedores.
@@ -43,3 +43,4 @@ Tienes varias opciones para ejecutar o desplegar tu solución basada en Flexygo 
   Ejecutable directamente con `dotnet run`, ideal para entornos de desarrollo o soluciones con proxy inverso.
 
 Pulsa en cualquiera de las opciones para ver una guía detallada sobre su uso, instalación y ventajas.
+

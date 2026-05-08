@@ -1,46 +1,92 @@
-## Instalación de la extensión Flexygo Product Tools en Visual Studio
+﻿# Extensiones IDE
 
-Para instalar la extensión **Flexygo Product Tools** en Visual Studio, sigue estos pasos:
+La extensión **Flexygo Developer Tools** está disponible para Visual Studio 2022 y VS Code. Permite generar los paquetes NuGet de tu producto y actualizar la solución a nuevas versiones de Flexygo Core, todo desde la interfaz del IDE sin necesidad de usar la línea de comandos.
 
-1. Abre Visual Studio.
-2. Ve al menú ```Extensiones``` y selecciona ```Administrar extensiones```.
-3. En la ventana de búsqueda, escribe ```Flexygo.Tools.Product```.
-4. Cuando aparezca la extensión en los resultados, haz clic en ```Descargar```.
-5. Reinicia Visual Studio para completar la instalación.
+=== "VS Code *(recomendado)*"
 
-Una vez instalada, podrás encontrar la barra de herramientas en ```Ver``` → ```Barras de herramientas``` → ```Flexygo Core Tools Product```.  
+    ## Instalación
 
-![Cargas de trabajo](../images/extension/update/toolbar.png)
+    1. Abre VS Code.
+    2. Ve a la vista **Extensiones** (<kbd>Ctrl+Shift+X</kbd>).
+    3. Busca `Flexygo Developer Tools` y haz clic en **Instalar**.
 
-Verás dos botones nuevos, uno de actualizar y otro de generar NuGets.
-![Cargas de trabajo](../images/extension/update/buttons.png)
+       ![Extensión Flexygo Developer Tools en el marketplace de VS Code](../images/vsCode/flxExtension.png)
+       <em class="caption">Extensión Flexygo Developer Tools en el marketplace de VS Code</em>
 
-## Flujo de uso de Flexygo Product Tools en Visual Studio
+    Una vez instalada, los comandos están disponibles desde **dos lugares**:
 
-### 1. Actualizar el producto
+    - Los **iconos de la barra de herramientas** (parte superior derecha de la ventana).
 
-1. Haz clic en el botón de actualizar en la barra de herramientas.
-2. Se abrirá una ventana donde podrás seleccionar la versión a la que deseas actualizar; por defecto, estará marcada la última versión disponible.  
-   ![Seleccionar versión de actualización](../images/extension/update/versionUpdate.png)
-3. Confirma la actualización a la versión seleccionada en la ventana de confirmación.  
-   ![Confirmación de actualización](../images/extension/update/updateConfirm.png)
-4. Aparecerá una pestaña con el progreso de la actualización.  
-   ![Progreso de actualización](../images/extension/update/progressUpdate.png)
-5. Ya tienes el producto actualizado a la versión elegida.
----
+      ![Iconos de Flexygo en la barra de VS Code](../images/vsCode/barExtension.png)
+      <em class="caption">Icono de generar NuGets (caja) e icono de actualizar (flecha)</em>
 
-### 2. Generar NuGets
+    - El **menú contextual** al hacer clic derecho sobre la carpeta raíz del proyecto en el explorador.
 
-1. Haz clic en el botón de generar NuGets en la barra de herramientas.
-2. Se abrirá una ventana donde podrás introducir la versión de NuGet que quieres generar.  
-   ![Introducir versión de NuGet](../images/extension/nuget/versionNuget.png)
-3. Confirma que deseas generar el paquete NuGet con la versión indicada en la ventana de confirmación.  
-   ![Confirmación de generación de NuGet](../images/extension/nuget/confirmNuget.png)
-4. Por último, se mostrará una pestaña con el progreso de la generación.  
-   ![Progreso de generación de NuGet](../images/extension/nuget/progressNuget.png)
-5. Una vez termine de generar los NuGets se abrirá la carpeta donde se han generado.
+      ![Menú contextual con las opciones de Flexygo](../images/vsCode/contextualMenu.png)
+      <em class="caption">Opciones de Flexygo en el menú contextual del explorador</em>
 
-!!! note "Descarga provisional"
-    Hasta que la extensión esté disponible en el Marketplace de Visual Studio, puedes descargarla directamente desde el siguiente enlace:
+    ## Actualizar el producto
 
-    [Descargar Flexygo Product Tools para Visual Studio](../files/Flexygo.Tools.Product.VisualStudio.vsix)
+    1. Usa el icono de actualizar en la barra o **Flexygo: Update Product** en el menú contextual.
+    2. Selecciona la versión a la que deseas actualizar; por defecto aparece la última disponible.
+
+       ![Selector de versión para actualizar](../images/vsCode/updateExtension.png)
+       <em class="caption">Selector de versión — Latest Version selecciona la más reciente</em>
+
+    ## Generar NuGets
+
+    1. Usa el icono de NuGet en la barra o **Flexygo: Generate NuGets** en el menú contextual.
+    2. Introduce la versión del paquete NuGet que quieres generar y pulsa <kbd>Enter</kbd>.
+
+       ![Campo de versión para generar NuGets](../images/vsCode/nugetExtension.png)
+       <em class="caption">Introduce el número de versión (ej: 1.2.3 o 1.2.3-beta.1)</em>
+
+    3. Al finalizar se abrirá la carpeta con los paquetes generados.
+
+=== "Visual Studio 2022"
+
+    ## Instalación
+
+    1. Abre Visual Studio.
+    2. Ve al menú **Extensiones** y selecciona **Administrar extensiones**.
+    3. En la ventana de búsqueda, escribe `Flexygo Developer Tools`.
+    4. Cuando aparezca la extensión en los resultados, haz clic en **Descargar**.
+    5. Reinicia Visual Studio para completar la instalación.
+
+    Una vez instalada, encontrarás la barra de herramientas en **Ver** → **Barras de herramientas** → **Flexygo Core Tools Product**.
+
+    ![Barra de herramientas Flexygo en Visual Studio](../images/extension/update/toolbar.png)
+    <em class="caption">Barra de herramientas con los botones de actualizar y generar NuGets</em>
+
+    ![Botones de la extensión](../images/extension/update/buttons.png)
+    <em class="caption">Botón de actualizar (izquierda) y generar NuGets (derecha)</em>
+
+    ## Actualizar el producto
+
+    1. Haz clic en el botón de actualizar en la barra de herramientas.
+    2. Selecciona la versión a la que deseas actualizar; por defecto aparece la última disponible.
+
+       ![Seleccionar versión de actualización](../images/extension/update/versionUpdate.png)
+
+    3. Confirma la actualización en la ventana de confirmación.
+
+       ![Confirmación de actualización](../images/extension/update/updateConfirm.png)
+
+    4. Sigue el progreso en la pestaña de salida.
+
+       ![Progreso de actualización](../images/extension/update/progressUpdate.png)
+
+    ## Generar NuGets
+
+    1. Haz clic en el botón de generar NuGets en la barra de herramientas.
+    2. Introduce la versión del paquete NuGet que quieres generar.
+
+       ![Introducir versión de NuGet](../images/extension/nuget/versionNuget.png)
+
+    3. Confirma la generación en la ventana de confirmación.
+
+       ![Confirmación de generación de NuGet](../images/extension/nuget/confirmNuget.png)
+
+    4. Sigue el progreso en la pestaña de salida. Al finalizar se abrirá la carpeta con los paquetes generados.
+
+       ![Progreso de generación de NuGet](../images/extension/nuget/progressNuget.png)

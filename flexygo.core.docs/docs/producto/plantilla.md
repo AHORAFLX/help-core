@@ -1,19 +1,25 @@
-# Crear un producto con Flexygo Core
-La nueva plantilla para productos de Flexygo Core permite generar una solución lista para comenzar el desarrollo de inmediato, con todo lo necesario integrado.
+﻿# Crear un producto con Flexygo Core
+
+La plantilla de Flexygo Core genera una solución lista para comenzar el desarrollo de inmediato, con todos los proyectos y configuraciones necesarios integrados.
+
+!!! tip "Forma recomendada"
+    La manera más sencilla de crear un nuevo producto es a través del **[Instalador de Flexygo Core](../despliegue/instalacion-desarrollo.md)**, que guía el proceso con una interfaz gráfica y configura todo automáticamente. Las secciones 1 y 2 de esta página describen la alternativa por línea de comandos para quienes prefieran ese flujo.
 
 ---
 
-## 1. Gestión de la plantilla
+## 1. Gestión de la plantilla (CLI)
 
 ### Instalación y actualización
-Para instalar la última versión disponible de la plantilla y actualizarla:
+
+Para instalar o actualizar a la última versión disponible de la plantilla:
+
 ```bash
 dotnet new install Flexygo.Product.Template --nuget-source https://nuget.ahorabh.com/v3/index.json --force
 ```
 
 ### Eliminación de la plantilla
 
-En caso de que desees desinstalarla:
+Para desinstalarla:
 
 ```bash
 dotnet new uninstall Flexygo.Product.Template
@@ -21,68 +27,87 @@ dotnet new uninstall Flexygo.Product.Template
 
 ---
 
-## 2. Creación de un nuevo producto
-
-### Crear un producto desde línea de comandos
-
-Para crear un nuevo producto basado en la plantilla:
+## 2. Creación de un nuevo producto (CLI)
 
 ```bash
 dotnet new flexygoproduct --name CRMCore --output "G:\Proyectos Plantilla\CRMCore" --allow-scripts yes
 ```
 
-> Cambia `CRMCore` por el nombre de tu producto y la ruta `G:\Proyectos Plantilla\CRMCore` por donde quieras generar el proyecto.
+> Cambia `CRMCore` por el nombre de tu producto y la ruta por donde quieras generar el proyecto.
 
-Al crear el producto, se generará automáticamente un **perfil de ejecución** en Visual Studio con el mismo nombre de proyecto que hayas indicado. Por tanto, **recuerda seleccionar ese perfil en la parte superior del Visual Studio** para ejecutar el proyecto correctamente.
+Al crear el producto, se generará automáticamente un **perfil de ejecución** en Visual Studio con el mismo nombre de proyecto indicado. Recuerda seleccionar ese perfil en la parte superior de Visual Studio para ejecutar el proyecto correctamente.
 
 ![Selector de perfil de ejecución en Visual Studio](../images/VS/PerfilVS.png)
 <em class="caption">Selector de perfil de ejecución en Visual Studio</em>
 
-### Crear un producto desde Visual Studio
-
-Tras instalar la plantilla, también puedes crear un nuevo producto **directamente desde la interfaz de Visual Studio**:
-
-1. Abre Visual Studio.
-2. Haz clic en **Crear un nuevo proyecto**.
-3. Busca “Flexygo” en el cuadro de búsqueda.
-4. Selecciona la plantilla `Flexygo Product`.
-5. Introduce el nombre de tu producto y la ubicación donde quieres crearlo.
-6. Haz clic en **Crear**.
-
-![Crear nuevo producto Flexygo desde Visual Studio](../images/VS/ProductoVS.png)
-<em class="caption">Selecciona la plantilla Flexygo en Visual Studio para crear tu producto desde la interfaz</em>
-
-!!! tip "Próximamente" 
-    Esta funcionalidad estará disponible también en el instalador de Flexygo Core,  donde podrás crear nuevos productos fácilmente desde una interfaz gráfica ¡sin necesidad de usar comandos!
-
 ---
 
-## 3. ¿Qué encontrarás en la solución generada?
+## 3. Estructura de la solución generada
 
-Al crear un nuevo producto con la plantilla de Flexygo Core, se genera una solución organizada con los siguientes proyectos principales:
+Al crear un nuevo producto se genera una solución organizada con los siguientes proyectos:
 
-- **Frontend**: Contiene todos los archivos necesarios para la parte cliente (JS, CSS, HTML, etc.), que serán servidos en el navegador.
-- **Backend**: Aquí se alojan las DLL personalizadas y la lógica de negocio principal del producto.
-- **Base de datos de datos (`*_DataDB`)**: Proyecto de base de datos donde se almacenan las tablas y objetos relacionados con los datos de negocio.
-- **Base de datos de configuración (`*_DB`)**: Proyecto de base de datos para toda la configuración y metadatos de la aplicación.
-- **Unit Tests**: Proyecto dedicado a los tests unitarios sobre la lógica de backend.
-- **Interface Tests**: Proyecto para tests automáticos de interfaz y flujos de usuario.
+![Estructura de la solución generada](../images/project-schema/schema.png)
+<em class="caption">Estructura de la solución generada por la plantilla</em>
 
-Además, cada proyecto incluye un archivo .nuspec ya preparado con la configuración mínima necesaria para poder generar los paquetes NuGet correspondientes.
-Revisa estos archivos .nuspec y adáptalos si necesitas añadir dependencias, metadatos o personalizaciones adicionales para tu producto.
+| Proyecto | Descripción |
+|----------|-------------|
+| **`{Nombre}.Frontend`** | Archivos cliente (JS, CSS, HTML…) servidos en el navegador |
+| **`{Nombre}.Backend`** | DLLs personalizadas y lógica de negocio del producto |
+| **`{Nombre}.Processes`** | Procesos personalizados en C# del producto |
+| **`{Nombre}.Conf.Database`** | Base de datos de configuración — metadatos de la aplicación |
+| **`{Nombre}.Data.Database`** | Base de datos de datos — tablas y objetos de negocio |
+| **`{Nombre}.UnitTest`** | Tests unitarios sobre la lógica de backend |
+| **`{Nombre}.InterfaceTest`** | Tests automáticos de interfaz y flujos de usuario |
 
-Así tendrás todo lo necesario para empezar a desarrollar y probar tu producto desde el primer momento.
-    
+Los proyectos **Frontend**, **Backend**, **Processes** y los de **base de datos** incluyen un archivo `.nuspec` preconfigurado para generar los paquetes NuGet correspondientes. Revísalos y adáptalos si necesitas añadir dependencias o metadatos adicionales.
+
+### Convención de nombres NuGet
+
+Para que el instalador detecte correctamente los paquetes de tu producto, deben seguir la misma convención de nombres que los proyectos de la solución:
+
+| Paquete NuGet | Proyecto origen |
+|---------------|-----------------|
+| `{Nombre}.Frontend` | `{Nombre}.Frontend` |
+| `{Nombre}.Backend` | `{Nombre}.Backend` |
+| `{Nombre}.Library` | `{Nombre}.Processes` |
+| `{Nombre}.Conf.Database` | `{Nombre}.Conf.Database` |
+| `{Nombre}.Data.Database` | `{Nombre}.Data.Database` |
+
+Con esta convención el instalador los detecta automáticamente. Si hay varias versiones disponibles, mostrará una lista desplegable para elegir la versión a instalar.
+
 ---
 
 ## 4. Pasos para comenzar a desarrollar
 
-Una vez generado el producto:
+=== "VS Code *(recomendado)*"
 
-1. Abre la solución generada con Visual Studio.
-2. Compila la solución completa.
-3. Publica los proyectos de base de datos:  
-    - `{NombreDelProyecto}_DB`  
-    - `{NombreDelProyecto}_DataDB`
-4. ¡Listo! Ya puedes empezar a desarrollar sobre tu nuevo producto Flexygo Core.
+    1. Abre VS Code y usa **File > Open Folder** para abrir la **carpeta raíz** del proyecto (la que contiene el `.gitignore` y el `docker-compose.yml`).
 
+    2. Abre la pestaña **Run and Debug** (<kbd>Ctrl+Shift+D</kbd>) y selecciona el perfil **Full Stack**.
+
+       ![Perfil Full Stack en VS Code](../images/project-schema/runVSCode.png)
+       <em class="caption">Selección del perfil Full Stack en VS Code</em>
+
+    3. Elige cómo configurar el proyecto antes de lanzarlo:
+
+        - **Con el Asistente de configuración** *(recomendado)*: pulsa el botón de inicio. Al no detectar configuración, Flexygo abrirá automáticamente el [Asistente de configuración](../despliegue/configuracion.md), que publicará las bases de datos y ajustará el `appsettings.json` por ti.
+        - **Manualmente**: publica los proyectos `{NombreDelProyecto}.Conf.Database` y `{NombreDelProyecto}.Data.Database`, completa las cadenas de conexión en el `appsettings.json` del Backend y establece `configured: true` en la sección `MailSettings`. Al pulsar inicio irás directamente al login sin pasar por el asistente.
+
+=== "Visual Studio 2022"
+
+    1. Abre la solución generada (`{NombreDelProyecto}.sln`) con Visual Studio 2022.
+
+    2. Compila la solución completa (**Build > Build Solution**) para restaurar paquetes y verificar que no hay errores.
+
+    3. Selecciona el perfil de ejecución generado en el selector de la barra superior.
+
+       ![Selector de perfil de ejecución en Visual Studio](../images/VS/PerfilVS.png)
+       <em class="caption">Selector de perfil de ejecución en Visual Studio</em>
+
+    4. Elige cómo configurar el proyecto antes de lanzarlo:
+
+        - **Con el Asistente de configuración** *(recomendado)*: ejecuta el proyecto. Al no detectar configuración, Flexygo abrirá automáticamente el [Asistente de configuración](../despliegue/configuracion.md), que publicará las bases de datos y ajustará el `appsettings.json` por ti.
+        - **Manualmente**: publica los proyectos `{NombreDelProyecto}.Conf.Database` y `{NombreDelProyecto}.Data.Database`, completa las cadenas de conexión en el `appsettings.json` del Backend y establece `configured: true` en la sección `MailSettings`. Al ejecutar el proyecto irás directamente al login sin pasar por el asistente.
+
+!!! tip "Siguientes pasos"
+    Consulta [Gestión de producto](gestionproducto.md) para entender la estructura de NuGets, versiones y el ciclo de vida del producto.

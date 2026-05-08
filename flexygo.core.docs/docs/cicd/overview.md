@@ -17,19 +17,19 @@ Este apartado resume un flujo **genérico** de CI/CD aplicable a GitHub Actions,
     - `dotnet restore`
 5. **Compilar Solución**:
     - `dotnet build ProjectName.sln -c Release`
-5. **Publicar Frontend**:
+6. **Publicar Frontend**:
     - `dotnet publish ProjectName.Frontend.csproj -c Release --no-build`
-6. **Publicar Backend**:
+7. **Publicar Backend**:
     - `dotnet publish ProjectName.Backend.csproj -c Release --no-build`
-7. **Compilar BD Configuración**:
+8. **Compilar BD Configuración**:
     - `dotnet build ProjectName.Conf.Database.sqlproj -c Release --no-build`
-8. **Compilar  BD Datos (opcional)**:
+9. **Compilar  BD Datos (opcional)**:
     - `dotnet build ProjectName.Data.Database.sqlproj -c Release --no-build`
-9. **Tests unitarios**:
+10. **Tests unitarios**:
     - `dotnet test ProjectName.UnitTest.csproj -c Release --no-build`
-10. **Tests de interfaz**:
+11. **Tests de interfaz**:
     - `dotnet test ProjectName.InterfaceTest.csproj -c Release --no-build`
-11. **Generación de NuGets**:
+12. **Generación de NuGets**:
     - Con Nuspec (Por defecto):
         - `nuget pack ProjectName.Frontend.nuspec -Properties Configuration=Release`
         - `nuget pack ProjectName.Backend.nuspec -Properties Configuration=Release`
@@ -40,6 +40,6 @@ Este apartado resume un flujo **genérico** de CI/CD aplicable a GitHub Actions,
         - `dotnet pack ProjectName.Backend.csproj -c Release --no-build`
         - `dotnet pack ProjectName.Conf.Database.sqlproj -c Release --no-build`
         - `dotnet pack ProjectName.Data.Database.sqlproj -c Release --no-build`
-12. **Generación de imagenes docker**:
+13. **Generación de imágenes docker**:
     - `docker build -t Repositorio/Nombre:Version -f Dockerfile PublicacionProjectName`
 

@@ -1,14 +1,25 @@
-## Instalador de Flexygo Core
+# Instalador de Flexygo Core
 
-El instalador de Flexygo Core te guía para desplegar tu aplicación de la forma más adecuada a tus necesidades. Puedes elegir entre tres métodos principales:
+El instalador de Flexygo Core es la herramienta principal para gestionar el ciclo de vida completo de una instalación: desde el despliegue inicial hasta la migración desde versiones anteriores o la desinstalación.
 
-- **[Instalación IIS](instalacionbasica.md):**  
-  Todo se instala automáticamente en un único servidor y sitio IIS. Ideal para pruebas, demos o entornos pequeños.
+<figure markdown="span">
+  ![Pantalla inicial instalador — modo oscuro](../images/installer/Despliegue/Inicio.png)
+  <figcaption>Pantalla de inicio del instalador (modo oscuro)</figcaption>
+</figure>
 
-- **[Instalación Avanzada](instalacionavanzada.md):**  
-  Permite configurar varios sitios IIS e instalación parcial para múltiples servidores. Para instalaciones personalizadas en producción.
+<figure markdown="span">
+  ![Pantalla inicial instalador — modo claro](../images/installer/modoClaro.png)
+  <figcaption>Pantalla de inicio del instalador (modo claro)</figcaption>
+</figure>
 
-- **[Instalación Docker](instalaciondocker.md):**  
-  Genera los archivos y configuraciones necesarios para desplegar la aplicación usando contenedores Docker.
+## Modos disponibles
 
-   ![Pantalla inicial instalador](../images/installer/home.png)
+El instalador cubre los siguientes escenarios:
+
+- **[Despliegue](instalacion-despliegue.md)** — Instalación en un entorno de producción o pre-producción. Disponible en tres variantes: IIS básico (sitio único compartido), IIS avanzado (sitios independientes por componente) y Docker vía installer.
+
+- **[Desarrollo](instalacion-desarrollo.md)** — Instalación orientada a entornos locales de desarrollo, con opciones específicas para trabajar con el código fuente.
+
+- **[Migración](instalacion-migracion.md)** — Migración de proyectos o aplicaciones existentes de .NET Framework a Flexygo Core (.NET moderno).
+
+- **[Desinstalar](desinstalar.md)** — Eliminación limpia de una instalación existente, incluyendo sitios IIS y bases de datos asociadas.

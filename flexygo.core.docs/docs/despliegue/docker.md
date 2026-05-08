@@ -88,7 +88,7 @@ volumes:
     flx-db-log:
     flx-db-secrets:
 ```
-> 🔐 **Usa contrasenas complejas**. SQL Server impone requisitos de complejidad.
+> 🔐 **Usa contraseñas complejas**. SQL Server impone requisitos de complejidad.
 ### Conectar a SQL Server del contenedor desde tu Management (SSMS/Azure Data Studio)
 
 Si quieres entrar a la BD del contenedor desde tu equipo (SSMS, Azure Data Studio, etc.), publica el puerto del contenedor:
@@ -230,3 +230,17 @@ Para ver los logs del backend:
 ```bash
 docker logs flexygo-backend
 ```
+
+
+---
+
+## ?? Configuración adicional para producción
+
+!!! warning "Deshabilitar actualizaciones automáticas en Docker"
+    En entornos Docker en producción, establece la variable de entorno `AutoUpdateEnable` a `false` para evitar reinicios inesperados del contenedor durante una actualización automática:
+
+    `yaml
+    environment:
+      - AutoUpdateEnable=false
+    ``n
+    Añade esta variable al servicio `flx-frontend` y `flx-backend` en tu `docker-compose.yml`.

@@ -2,10 +2,8 @@
 
 Las **Flexygo Product Tools** son un conjunto de utilidades que te permiten gestionar y mantener tus productos Flexygo Core de forma sencilla. Con ellas puedes generar tus propios paquetes NuGet personalizados, actualizar tu solución a nuevas versiones y sincronizar recursos y configuración automáticamente.
 
-!!! info "También disponible como extensión para Visual Studio"
-    Flexygo Product Tools también está disponible como extensión para Visual Studio, permitiéndote ejecutar los mismos comandos desde una interfaz gráfica integrada en tu entorno de desarrollo.
-
-    Puedes consultar cómo instalar y usar la extensión, así como ver ejemplos y capturas de pantalla, en el apartado [```Uso en Visual Studio```](./extension.md).
+!!! tip "CLI opcional"
+    El uso de la herramienta por línea de comandos es opcional. Las mismas operaciones están disponibles desde el **instalador de Flexygo Core**, la **extensión para Visual Studio 2022** ([ver más](./extension.md)) y la **extensión Flexygo Developer Tools para VS Code** ([ver más](./extension.md)), sin necesidad de usar la terminal.
 
 
 !!! warning "Importante"
@@ -74,3 +72,8 @@ flexygo-product --help
 
 - Es recomendable realizar una copia de seguridad de tu solución antes de actualizar paquetes y recursos, especialmente si tienes modificaciones manuales en las carpetas ```wwwroot```.
 - Tras la actualización, revisa el fichero ```appsettings``` por si quieres ajustar alguna configuración nueva.
+
+---
+
+!!! tip "Convención de nombres NuGet"
+    Para que el instalador detecte correctamente los paquetes de tu producto deben seguir la convención de nombres estándar. Consulta la sección [Convención de nombres NuGet](./plantilla.md#convencion-de-nombres-nuget) en la guía de creación de producto.

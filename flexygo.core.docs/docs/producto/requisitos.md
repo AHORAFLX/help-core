@@ -1,54 +1,82 @@
-## Requisitos previos para el desarrollo
+﻿## Requisitos previos para el desarrollo
 
 Antes de empezar a trabajar con un producto generado por la plantilla **Flexygo Core**, asegúrate de tener instalado lo siguiente:
 
 ---
 
-### **Visual Studio 2022 o Visual Studio 2026 Insiders**
+!!! note "Versiones de .NET"
+    Los proyectos Flexygo Core requieren **.NET 9 SDK**. Si además vas a usar el servidor MCP (`flexygo-mcp`), este requiere **.NET 10 SDK** — consulta la sección [MCP › Prerrequisitos](../mcp/prerequisitos.md) para más detalle.
 
-Microsoft ha descontinuado la versión *Preview* de Visual Studio 2022.  
-Por ello, es importante tener en cuenta lo siguiente según el tipo de proyecto con el que vayas a trabajar:
-
-#### 🔹 Para **proyectos nuevos**
-Usa **Visual Studio 2022** (versión estable más reciente).  
-Esta versión **sí incluye la característica _SDK-style SQL Projects_**, necesaria para los nuevos proyectos de base de datos generados por **Flexygo Core**.
-
-Durante la instalación o modificación de Visual Studio:
-
-- Selecciona las siguientes **cargas de trabajo**:
-  
-  ![Cargas de trabajo](../images/VS/CargasTrabajoVS1.png)  
-  ![Cargas de trabajo](../images/VS/CargasTrabajoVS2.png)  
-  ![Cargas de trabajo](../images/VS/CargasTrabajoVS3.png)
-
-- En **Componentes individuales**, marca **SDK-style SQL Projects** y **deshabilita SQL Server Data Tools**, ya que ambas no son compatibles:
-  
-  ![Componentes individuales](../images/VS/SqlVS.png)
-
-#### 🔹 Para **proyectos antiguos**
-Usa **Visual Studio 2026 Insiders** si ya trabajabas previamente con él o con versiones que incluían soporte para tus proyectos anteriores.  
-Ten en cuenta que **Visual Studio 2026 Insiders por el momento no incluye la característica _SDK-style SQL Projects_**, por lo que **no puede usarse para crear ni modificar proyectos nuevos**.
-
-Durante la instalación, selecciona las mismas **cargas de trabajo** mostradas en las capturas anteriores, pero **no instales SDK-style SQL Projects** y selecciona **SQL Server Data Tools**.
-
----
-
-!!! info "Por qué son necesarias ambas versiones"
-    Actualmente, **Microsoft mantiene que las características “SQL Server Data Tools (SSDT)” y “SDK-style SQL Projects” no son compatibles dentro de la misma instalación de Visual Studio**.  
-    Por esta razón, es necesario tener **dos versiones distintas**:
-    - **Visual Studio 2022** para los proyectos nuevos basados en _SDK-style SQL Projects_.  
-    - **Visual Studio 2026 Insiders** para los proyectos antiguos que siguen usando **SQL Server Data Tools**.
-
-
----
+    Descarga desde [dotnet.microsoft.com](https://dotnet.microsoft.com/download).
 
 ### **SQL Server 2016 o superior**
 
-Debes tener una instancia local o accesible de **SQL Server 2016 o superior** para poder desplegar y trabajar con los proyectos de base de datos.
+Debes tener una instancia local o accesible de **SQL Server 2016 o superior** para poder desplegar y trabajar con los proyectos de base de datos. La edición gratuita **SQL Server Express** es suficiente para entornos de desarrollo.
 
 ---
 
-!!! warning "Importante"
-    - Para **proyectos nuevos**, utiliza **Visual Studio 2022** con la característica **_SDK-style SQL Projects_**.  
-    - Para **proyectos antiguos**, puedes continuar con **Visual Studio 2026 Insiders**, pero **no podrás crear ni modificar proyectos de base de datos SDK**.  
-    - Mantén tanto **Visual Studio** como **SQL Server** actualizados para evitar incompatibilidades con los paquetes y herramientas de Flexygo.
+## IDE de desarrollo
+
+=== "VS Code *(recomendado)*"
+
+    La opción recomendada para trabajar con proyectos Flexygo Core.
+
+    ### Extensiones necesarias
+
+    Instala las siguientes extensiones desde el Marketplace de VS Code:
+
+    - **C# Dev Kit** — soporte completo de C#, IntelliSense y depuración
+
+      ![C# Dev Kit en el marketplace de VS Code](../images/vsCode/csharpdevkit.png)
+      <em class="caption">Extensión C# Dev Kit</em>
+
+    - **SQL Database Projects** — gestión y despliegue de proyectos de base de datos
+
+      ![SQL Database Projects en el marketplace de VS Code](../images/vsCode/sqldatabaseproject.png)
+      <em class="caption">Extensión SQL Database Projects</em>
+
+    - **Flexygo Developer Tools** — herramientas específicas para proyectos Flexygo Core
+
+      ![Flexygo Developer Tools en el marketplace de VS Code](../images/vsCode/flxExtension.png)
+      <em class="caption">Extensión Flexygo Developer Tools</em>
+
+    ### Node.js (requerido para compilar el Frontend)
+
+    Necesitas tener **Node.js** instalado en tu sistema.
+
+    !!! danger "Opción PATH global obligatoria"
+        Durante la instalación de Node.js, **debes marcar la opción de añadir Node al PATH global del sistema**. Si no se activa esta opción, el compilador del Frontend no encontrará los binarios de Node y la compilación fallará.
+
+        Puedes verificarlo ejecutando en una terminal:
+        ```bash
+        node --version
+        npm --version
+        ```
+        Si ambos comandos devuelven un número de versión, la instalación es correcta.
+
+    Descarga la versión LTS desde [nodejs.org](https://nodejs.org/).
+
+=== "Visual Studio 2022"
+
+    Alternativa válida para quienes prefieran el IDE completo de Microsoft.
+
+    ### Cargas de trabajo
+
+    Durante la instalación o modificación de Visual Studio, selecciona las siguientes **cargas de trabajo**:
+
+    ![Cargas de trabajo](../images/VS/CargasTrabajoVS1.png)
+    ![Cargas de trabajo](../images/VS/CargasTrabajoVS2.png)
+    ![Cargas de trabajo](../images/VS/CargasTrabajoVS3.png)
+
+    ### Componentes individuales
+
+    En **Componentes individuales**, marca **SDK-style SQL Projects** y **deshabilita SQL Server Data Tools**, ya que ambas no son compatibles:
+
+    ![Componentes individuales](../images/VS/SqlVS.png)
+
+    ### Extensión Flexygo Developer Tools
+
+    Instala la extensión **Flexygo Developer Tools** desde el Marketplace de Visual Studio. Proporciona las mismas herramientas de gestión de producto disponibles en VS Code.
+
+    !!! warning "Visual Studio 2026"
+        Visual Studio 2026 **no incluye la característica _SDK-style SQL Projects_**, por lo que no puede usarse para crear ni modificar los proyectos de base de datos de Flexygo Core.

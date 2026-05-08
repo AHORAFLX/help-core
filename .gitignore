@@ -269,3 +269,4 @@ Employee_Portal_DataBD/scripts/data/employees_holidays.sql
 flxSatInterfaceTest/appsettings.local.json
 
 site/
+.planning/
