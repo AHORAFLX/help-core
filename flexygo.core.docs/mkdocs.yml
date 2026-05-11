@@ -8,34 +8,59 @@ theme:
   custom_dir: overrides
   language: es
   palette:
-  - scheme: darkmode
-    primary: black
-    accent: custom
-    toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
-  - scheme: default
-    toggle:
-        icon: material/weather-night
+    - scheme: default
+      toggle:
+        icon: material/weather-night 
         name: Switch to dark mode
-    primary: black
-    accent: custom
+    - scheme: darkmode
+      toggle:
+        icon: octicons/sun-16
+        name: Switch to light mode
   features:
-    - navigation.instant
-    - navigation.instant.progress
-    - navigation.top
-    - navigation.sections
-    - navigation.tabs
-    - toc.follow
-    - search.highlight
-    - content.code.copy
-    - content.code.annotate
-    - content.tooltips
+    - navigation.path
+    - navigation.expand # Expanded sections in sidebar
+    - navigation.sections # Section headers in sidebar
+    - navigation.instant # Instant page loading (SPA-like)
+    - navigation.tracking # Track active section in sidebar
+    - navigation.top # Track active section in sidebar
+    - search.highlight # Highlight search terms
+    - search.suggest # Show search suggestions
+    - content.code.copy  # Code copy button
 
 extra_css:
-  - stylesheets/template.css
-  - stylesheets/extra.css
-  - stylesheets/center-images.css
+  # Basic styles for every documentation project
+  ## Basic Structure
+  - stylesheets/custom-colors.css
+  - stylesheets/fh-structural/base.css
+  - stylesheets/fh-structural/code-highlighting.css
+  - stylesheets/fh-structural/css-class-components.css
+  - stylesheets/fh-structural/404-error.css
+  ## Basic components
+  - stylesheets/fh-structural/components/fh-modal.css
+  - stylesheets/fh-structural/components/fh-copy.css
+  - stylesheets/fh-structural/components/fh-namepropagator.css
+  - stylesheets/fh-structural/components/fh-versions.css
+  ## Basic fonts and icons
+  - docs_assets/fh-structural/fonts/flags/flags.css
+  - docs_assets/fh-structural/fonts/flexygo/utils.css
+  - docs_assets/fh-structural/fonts/flexygo/flexygo-icons.css
+extra_javascript:
+  # Basic javascripts for every documentation project
+  ## Basic utilities
+  - javascripts/fh-structural/utils.js
+  ## Basic components
+  - javascripts/fh-structural/components/fh-modal.js
+  - javascripts/fh-structural/components/fh-copy.js
+  - javascripts/fh-structural/components/fh-popover.js
+  - javascripts/fh-structural/components/fh-namepropagator.js
+  - javascripts/fh-structural/components/fh-versions.js
+  - javascripts/fh-structural/components/flx-navbutton.js
+  ## Translation files
+  - javascripts/cultures/default_language.js
+  - javascripts/cultures/es.js
+  - javascripts/cultures/en.js
+
+  # Your project js files here ↓
 extra:
   social:
     - icon: fontawesome/brands/discord
