@@ -23,6 +23,21 @@ Este es el factor que más afecta a la calidad del trabajo con el agente. A medi
 
 ---
 
+## Herramientas de desarrollo spec-driven (GSD, Spec Kit y similares)
+
+!!! warning "No uses herramientas spec-driven junto al servidor MCP"
+    Herramientas como **GSD**, **Spec Kit** u otras basadas en *spec-driven development* recopilan grandes cantidades de contexto del proyecto (estructura de archivos, historial, decisiones, planes, etc.). Sin embargo, **no deben usarse junto con el servidor MCP de Flexygo**.
+
+    **¿Por qué?**
+
+    El servidor MCP ya inyecta su propio contexto especializado sobre el estado de la aplicación y la base de datos. Estas herramientas de planificación no tienen acceso real a cómo funciona la aplicación ni a la estructura de la BD, por lo que el contexto que generan no refleja la realidad del proyecto Flexygo.
+
+    El resultado es contraproducente: el contexto que recopilan **interfiere con el contexto real que aporta el MCP** y ocupa ventana de contexto con información que no tiene valor operativo. El agente acaba trabajando con señales contradictorias.
+
+    **Usa el servidor MCP directamente**, sin capas adicionales de planificación spec-driven. Para tareas complejas, sigue los consejos de la sección [Gestión de la ventana de contexto](#gestión-de-la-ventana-de-contexto) y divide el trabajo en pasos.
+
+---
+
 ## Prompt /build-mvp
 
 El prompt principal para **crear un producto Flexygo Core desde cero**. Basta con describir qué quieres construir:
