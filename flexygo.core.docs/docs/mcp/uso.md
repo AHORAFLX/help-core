@@ -35,6 +35,9 @@ Cuando el servidor esté activo, el archivo muestra el estado **Running** junto 
 !!! tip "El servidor debe estar activo antes de usar el agente"
     Arranca siempre el servidor MCP antes de abrir el chat de Copilot en modo agente. Si Copilot ya estaba abierto cuando arrancaste el servidor, recarga la ventana de VS Code (`Ctrl+Shift+P` → **Developer: Reload Window**).
 
+!!! warning "Antes de empezar: herramientas spec-driven"
+    Si usas herramientas como **GSD**, **Spec Kit** u otras basadas en *spec-driven development*, **no las combines con el servidor MCP de Flexygo**. El contexto que generan interfiere con el contexto real que aporta el MCP y degrada la calidad del agente. Consulta [Buenas prácticas](tips-copilot.md#herramientas-de-desarrollo-spec-driven-gsd-spec-kit-y-similares) para más detalle.
+
 ---
 
 ## Flujo /build-mvp

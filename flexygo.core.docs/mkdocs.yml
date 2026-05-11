@@ -98,7 +98,7 @@ nav:
           - Uso básico: mcp/uso.md
           - Configuración: mcp/configuracion.md
           - Herramientas: mcp/herramientas.md
-          - Tips con Copilot: mcp/tips-copilot.md
+          - Buenas prácticas: mcp/tips-copilot.md
   - CI/CD:
       - Visión general: cicd/overview.md
       - TeamCity: cicd/teamcity.md

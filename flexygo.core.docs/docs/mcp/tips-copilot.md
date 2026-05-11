@@ -1,6 +1,6 @@
-# Tips con Copilot
+# Buenas prácticas
 
-Estos tips asumen que el servidor `flexygo-mcp` está en marcha y conectado a GitHub Copilot en modo agente. Si todavía no lo has configurado, consulta primero [Uso básico](uso.md).
+Estas recomendaciones asumen que el servidor `flexygo-mcp` está en marcha y conectado a GitHub Copilot en modo agente. Si todavía no lo has configurado, consulta primero [Uso básico](uso.md).
 
 ---
 
