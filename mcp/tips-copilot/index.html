@@ -1223,6 +1223,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#herramientas-de-desarrollo-spec-driven-gsd-spec-kit-y-similares" class="md-nav__link">
+    <span class="md-ellipsis">
+      Herramientas de desarrollo spec-driven (GSD, Spec Kit y similares)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#prompt-build-mvp" class="md-nav__link">
     <span class="md-ellipsis">
       Prompt /build-mvp
@@ -1620,6 +1629,16 @@
 <li><strong>Para flujos largos como <code>/build-mvp</code>, empieza siempre con contexto limpio.</strong> El agente necesita toda la ventana disponible para orquestar correctamente el flujo completo.</li>
 </ul>
 <hr />
+<h2 id="herramientas-de-desarrollo-spec-driven-gsd-spec-kit-y-similares">Herramientas de desarrollo spec-driven (GSD, Spec Kit y similares)</h2>
+<div class="admonition warning">
+<p class="admonition-title">No uses herramientas spec-driven junto al servidor <abbr title="Model Context Protocol — protocolo para conectar herramientas IA con contexto externo">MCP</abbr></p>
+<p>Herramientas como <strong>GSD</strong>, <strong>Spec Kit</strong> u otras basadas en <em>spec-driven development</em> recopilan grandes cantidades de contexto del proyecto (estructura de archivos, historial, decisiones, planes, etc.). Sin embargo, <strong>no deben usarse junto con el servidor <abbr title="Model Context Protocol — protocolo para conectar herramientas IA con contexto externo">MCP</abbr> de Flexygo</strong>.</p>
+<p><strong>¿Por qué?</strong></p>
+<p>El servidor <abbr title="Model Context Protocol — protocolo para conectar herramientas IA con contexto externo">MCP</abbr> ya inyecta su propio contexto especializado sobre el estado de la aplicación y la base de datos. Estas herramientas de planificación no tienen acceso real a cómo funciona la aplicación ni a la estructura de la BD, por lo que el contexto que generan no refleja la realidad del proyecto Flexygo.</p>
+<p>El resultado es contraproducente: el contexto que recopilan <strong>interfiere con el contexto real que aporta el <abbr title="Model Context Protocol — protocolo para conectar herramientas IA con contexto externo">MCP</abbr></strong> y ocupa ventana de contexto con información que no tiene valor operativo. El agente acaba trabajando con señales contradictorias.</p>
+<p><strong>Usa el servidor <abbr title="Model Context Protocol — protocolo para conectar herramientas IA con contexto externo">MCP</abbr> directamente</strong>, sin capas adicionales de planificación spec-driven. Para tareas complejas, sigue los consejos de la sección <a href="#gestión-de-la-ventana-de-contexto">Gestión de la ventana de contexto</a> y divide el trabajo en pasos.</p>
+</div>
+<hr />
 <h2 id="prompt-build-mvp">Prompt /build-mvp</h2>
 <p>El prompt principal para <strong>crear un producto Flexygo Core desde cero</strong>. Basta con describir qué quieres construir:</p>
 <div class="highlight"><pre><span></span><code>/build-mvp Quiero un backoffice para gestionar un call center
@@ -1767,6 +1786,15 @@ Quiero añadir un filtro por estado en el listado principal.
   <a href="#gestion-de-la-ventana-de-contexto" class="md-nav__link">
     <span class="md-ellipsis">
       Gestión de la ventana de contexto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#herramientas-de-desarrollo-spec-driven-gsd-spec-kit-y-similares" class="md-nav__link">
+    <span class="md-ellipsis">
+      Herramientas de desarrollo spec-driven (GSD, Spec Kit y similares)
     </span>
   </a>
   
