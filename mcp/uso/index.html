@@ -1244,7 +1244,7 @@
   
   
   <span class="md-ellipsis">
-    Tips con Copilot
+    Buenas prácticas
     
   </span>
   
@@ -1551,6 +1551,10 @@
 <div class="admonition tip">
 <p class="admonition-title">El servidor debe estar activo antes de usar el agente</p>
 <p>Arranca siempre el servidor <abbr title="Model Context Protocol — protocolo para conectar herramientas IA con contexto externo">MCP</abbr> antes de abrir el chat de Copilot en modo agente. Si Copilot ya estaba abierto cuando arrancaste el servidor, recarga la ventana de VS Code (<code>Ctrl+Shift+P</code> → <strong>Developer: Reload Window</strong>).</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Antes de empezar: herramientas spec-driven</p>
+<p>Si usas herramientas como <strong>GSD</strong>, <strong>Spec Kit</strong> u otras basadas en <em>spec-driven development</em>, <strong>no las combines con el servidor <abbr title="Model Context Protocol — protocolo para conectar herramientas IA con contexto externo">MCP</abbr> de Flexygo</strong>. El contexto que generan interfiere con el contexto real que aporta el <abbr title="Model Context Protocol — protocolo para conectar herramientas IA con contexto externo">MCP</abbr> y degrada la calidad del agente. Consulta <a href="../tips-copilot/#herramientas-de-desarrollo-spec-driven-gsd-spec-kit-y-similares">Buenas prácticas</a> para más detalle.</p>
 </div>
 <hr />
 <h2 id="flujo-build-mvp">Flujo /build-mvp</h2>
