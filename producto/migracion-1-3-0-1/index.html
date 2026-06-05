@@ -8,10 +8,10 @@
       
       
       
-        <link rel="prev" href="../uso/">
+        <link rel="prev" href="../gestionproducto/">
       
       
-        <link rel="next" href="../herramientas/">
+        <link rel="next" href="../extension/">
       
       
       <link rel="icon" href="../../images/logos/favicon.png">
@@ -19,7 +19,7 @@
     
     
       
-        <title>Configuración - Flexygo Core</title>
+        <title>Migración 1.3.0.1 - Flexygo Core</title>
       
     
     
@@ -105,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#configuracion-del-servidor-mcp" class="md-skip">
+        <a href="#migracion-de-producto-a-flexygo-1301" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -803,7 +803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../producto/requisitos/" class="md-nav__link">
+      <a href="../requisitos/" class="md-nav__link">
         
   
   
@@ -826,7 +826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../producto/plantilla/" class="md-nav__link">
+      <a href="../plantilla/" class="md-nav__link">
         
   
   
@@ -849,169 +849,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../producto/gestionproducto/" class="md-nav__link">
+      <a href="../gestionproducto/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Gestión de producto
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../producto/migracion-1-3-0-1/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Migración 1.3.0.1
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../producto/extension/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Extensiones IDE
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../producto/personalizacion/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Personalización
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked="">
-        
-          
-          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    MCP
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_7">
-            <span class="md-nav__icon md-icon"></span>
-            MCP
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix="">
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../prerequisitos/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Prerrequisitos
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../uso/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Uso básico
     
   </span>
   
@@ -1038,17 +881,277 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Migración 1.3.0.1
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Configuración
+    Migración 1.3.0.1
     
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#1-descarga-del-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Descarga del script
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ubicacion-del-script-en-tu-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Ubicación del script en tu proyecto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-requisitos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Requisitos previos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Requisitos previos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-minima-de-flexygo-12021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versión mínima de Flexygo: 1.2.0.21
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      PowerShell
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estructura-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura del proyecto
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-seguridad-repositorio-git-y-cambios-locales" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Seguridad: repositorio git y cambios locales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Seguridad: repositorio git y cambios locales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#si-tu-proyecto-ya-esta-en-un-repositorio-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Si tu proyecto ya está en un repositorio git
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#si-tu-proyecto-no-esta-en-un-repositorio-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Si tu proyecto NO está en un repositorio git
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ejecucion-del-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Ejecución del script
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Ejecución del script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-previsualizacion-recomendado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1 — Previsualización (recomendado)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-aplicar-la-migracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 2 — Aplicar la migración
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#especificar-el-nombre-del-proyecto-manualmente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Especificar el nombre del proyecto manualmente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametros-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parámetros disponibles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-que-hace-el-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Qué hace el script
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Qué hace el script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fase-1-validacion-de-precondiciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fase 1 — Validación de precondiciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fase-2-seguridad-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fase 2 — Seguridad git
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fase-3-construccion-del-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fase 3 — Construcción del plan
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fase-4-ejecucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fase 4 — Ejecución
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-cambios-aplicados" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Cambios aplicados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Cambios aplicados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#archivos-creados-o-actualizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archivos creados o actualizados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#archivos-y-carpetas-eliminados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archivos y carpetas eliminados
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1062,7 +1165,164 @@
   
   
     <li class="md-nav__item">
-      <a href="../herramientas/" class="md-nav__link">
+      <a href="../extension/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extensiones IDE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../personalizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Personalización
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_7">
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    MCP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            MCP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/prerequisitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prerrequisitos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/uso/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Uso básico
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/configuracion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuración
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/herramientas/" class="md-nav__link">
         
   
   
@@ -1085,7 +1345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tips-copilot/" class="md-nav__link">
+      <a href="../../mcp/tips-copilot/" class="md-nav__link">
         
   
   
@@ -1373,17 +1633,339 @@
 
 
 
-<h1 id="configuracion-del-servidor-mcp">Configuración del servidor <abbr title="Model Context Protocol — protocolo para conectar herramientas IA con contexto externo">MCP</abbr></h1>
-<p>El proyecto generado desde la plantilla de Flexygo Core ya incluye el archivo <code>.vscode/mcp.json</code> con la configuración necesaria para arrancar el servidor directamente desde VS Code.</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">"servers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">"flexygo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"flexygo-mcp"</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
+<h1 id="migracion-de-producto-a-flexygo-1301">Migración de producto a Flexygo 1.3.0.1</h1>
+<p>La versión <strong>1.3.0.1</strong> de Flexygo Core introduce cambios estructurales importantes en los proyectos derivados: nuevo sistema de assets estáticos vía <abbr title="Gestor de paquetes para .NET">NuGet</abbr>, carpeta <code>conf/</code> de configuración, sistema <code>buildTransitive</code>, nuevo <code>nuget.config</code> a nivel de solución y eliminación de los <code>install.map.json</code>, entre otros.</p>
+<p>Para facilitar esta transición, se proporciona un script de PowerShell (<code>migration-script.ps1</code>) que automatiza todos los cambios necesarios de forma segura.</p>
+<hr>
+<h2 id="1-descarga-del-script">1. Descarga del script</h2>
+<div class="download-box">
+<p><a class="md-button md-button--primary" href="../../files/script.zip"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0zm192 0v128h128zM96 48c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16m0 64c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16m0 64c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16s-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16m-6.3 71.8c3.7-14 16.4-23.8 30.9-23.8h14.8c14.5 0 27.2 9.7 30.9 23.8l23.5 88.2c1.4 5.4 2.1 10.9 2.1 16.4 0 35.2-28.8 63.7-64 63.7s-64-28.5-64-63.7c0-5.5.7-11.1 2.1-16.4l23.5-88.2zM112 336c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16z"></path></svg></span> Descargar migration-script.zip</a></p>
+</div>
+<p>El archivo <code>.zip</code> contiene el script principal y las plantillas de archivos que se aplicarán durante la migración:</p>
+<div class="highlight"><pre><span></span><code>migration-script.zip
+├── migration-script.ps1      ← Script principal
+└── templates/                ← Plantillas de archivos gestionadas por el script
 </code></pre></div>
-<p>Consulta <a href="../uso/">Uso básico</a> para ver cómo arrancar el servidor y conectarlo al agente.</p>
+<hr>
+<h2 id="2-ubicacion-del-script-en-tu-proyecto">2. Ubicación del script en tu proyecto</h2>
+<p>Extrae el contenido del <code>.zip</code> directamente en la <strong>raíz del repositorio</strong>, al mismo nivel que el archivo <code>.sln</code>.</p>
+<p>La estructura resultante debe ser la siguiente:</p>
+<div class="highlight"><pre><span></span><code>📁 MiProducto/              ← Raíz del repositorio (abre la terminal aquí)
+├── 📁 script/
+│   ├── migration-script.ps1
+│   └── 📁 templates/
+├── MiProducto.sln
+├── MiProducto.Backend/
+├── MiProducto.Frontend/
+└── ...
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">El script debe estar al mismo nivel que el <code>.sln</code></p>
+<p>Extrae la carpeta <code>script/</code> en la raíz del repositorio, junto al archivo <code>.sln</code>. El script detectará el proyecto automáticamente desde el directorio actual.</p>
+</div>
+<hr>
+<h2 id="3-requisitos-previos">3. Requisitos previos</h2>
+<h3 id="version-minima-de-flexygo-12021">Versión mínima de Flexygo: 1.2.0.21</h3>
+<div class="admonition warning">
+<p class="admonition-title">El script se detendrá si los paquetes Flexygo están por debajo de <code>1.2.0.21</code></p>
+</div>
+<p>El script comprueba los paquetes <code>Flexygo.*</code> en los siguientes archivos de proyecto:</p>
+<table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Paquetes verificados</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>*.Backend.csproj</code></td>
+<td><code>Flexygo.*</code></td>
+</tr>
+<tr>
+<td><code>*.Frontend.csproj</code></td>
+<td><code>Flexygo.*</code></td>
+</tr>
+<tr>
+<td><code>*.Processes.csproj</code></td>
+<td><code>Flexygo.*</code></td>
+</tr>
+<tr>
+<td><code>*.Conf.Database.sqlproj</code></td>
+<td><code>Flexygo.*</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Si tu producto está en una versión anterior a <code>1.2.0.21</code>:</strong></p>
+<ol>
+<li>Abre VS Code en tu proyecto.</li>
+<li>Usa la extensión <strong>Flexygo Developer Tools</strong> y ejecuta la acción <strong>"Update Product"</strong> especificando la versión <code>1.2.0.21</code>.</li>
+<li>Una vez actualizado a <code>1.2.0.21</code>, vuelve a ejecutar el script de migración.</li>
+</ol>
+<h3 id="powershell">PowerShell</h3>
+<ul>
+<li>PowerShell 5.1 o superior (incluido en Windows 10/11 por defecto).</li>
+<li>PowerShell 7+ también es compatible.</li>
+</ul>
+<h3 id="estructura-del-proyecto">Estructura del proyecto</h3>
+<p>La carpeta indicada en <code>-ProjectPath</code> debe contener un archivo <code>.sln</code>.</p>
+<hr>
+<h2 id="4-seguridad-repositorio-git-y-cambios-locales">4. Seguridad: repositorio git y cambios locales</h2>
+<h3 id="si-tu-proyecto-ya-esta-en-un-repositorio-git">Si tu proyecto ya está en un repositorio git</h3>
+<div class="admonition danger">
+<p class="admonition-title">Si hay cambios locales sin commitear, el script se detendrá</p>
+</div>
+<p>Esta es una medida de seguridad: el script no puede revertirse automáticamente si ya hay trabajo en progreso sin registrar en el historial.</p>
+<p><strong>Opciones antes de ejecutar la migración:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c"># Opción 1 — Guardar cambios temporalmente (recomendado)</span>
+<span class="n">git</span> <span class="n">stash</span>
+
+<span class="c"># Opción 2 — Commitear el estado actual</span>
+<span class="n">git</span> <span class="n">add</span> <span class="p">.</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="n">-m</span> <span class="s2">"wip: estado antes de la migración"</span>
+
+<span class="c"># Opción 3 — Descartar todos los cambios (¡irreversible!)</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="p">--</span> <span class="p">.</span>
+</code></pre></div>
+<p>Una vez que el árbol de trabajo esté limpio, vuelve a ejecutar el script.</p>
+<h3 id="si-tu-proyecto-no-esta-en-un-repositorio-git">Si tu proyecto NO está en un repositorio git</h3>
+<p>El script <strong>inicializa automáticamente</strong> un repositorio git local y guarda el estado completo del proyecto antes de aplicar cualquier cambio, con el mensaje:</p>
+<div class="highlight"><pre><span></span><code>initial: master snapshot before migration
+</code></pre></div>
+<p>Esto te permite revisar o revertir la migración en cualquier momento:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Ver qué cambió la migración</span>
+<span class="n">git</span> <span class="nb">diff </span><span class="n">HEAD</span><span class="p">~</span><span class="n">1</span>
+
+<span class="c"># Ver solo los archivos afectados</span>
+<span class="n">git</span> <span class="nb">diff </span><span class="n">HEAD</span><span class="p">~</span><span class="n">1</span> <span class="p">-</span><span class="n">-name-only</span>
+
+<span class="c"># Revertir completamente la migración</span>
+<span class="n">git</span> <span class="n">reset</span> <span class="p">-</span><span class="n">-hard</span> <span class="n">HEAD</span><span class="p">~</span><span class="n">1</span>
+</code></pre></div>
+<hr>
+<h2 id="5-ejecucion-del-script">5. Ejecución del script</h2>
+<p>Abre un terminal PowerShell en la <strong>raíz del repositorio</strong> (la carpeta que contiene el <code>.sln</code> y la carpeta <code>script/</code>):</p>
+<h3 id="paso-1-previsualizacion-recomendado">Paso 1 — Previsualización (recomendado)</h3>
+<p>Ejecuta primero en modo <strong>dry-run</strong> para ver exactamente qué se va a cambiar sin modificar nada:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">script</span><span class="p">\</span><span class="n">migration-script</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-DryRun</span>
+</code></pre></div>
+<h3 id="paso-2-aplicar-la-migracion">Paso 2 — Aplicar la migración</h3>
+<p>Una vez revisado el plan, ejecuta sin <code>-DryRun</code>. El script pedirá confirmación antes de aplicar los cambios:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">script</span><span class="p">\</span><span class="n">migration-script</span><span class="p">.</span><span class="n">ps1</span>
+</code></pre></div>
+<p>Escribe <code>yes</code> o <code>y</code> cuando se solicite confirmación para continuar.</p>
+<h3 id="especificar-el-nombre-del-proyecto-manualmente">Especificar el nombre del proyecto manualmente</h3>
+<p>Si el nombre del proyecto no se detecta correctamente desde el <code>.sln</code>, puedes indicarlo de forma explícita:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">script</span><span class="p">\</span><span class="n">migration-script</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-ProjectName</span> <span class="n">MiProducto</span>
+</code></pre></div>
+<h3 id="parametros-disponibles">Parámetros disponibles</h3>
+<table>
+<thead>
+<tr>
+<th>Parámetro</th>
+<th>Descripción</th>
+<th>Por defecto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-ProjectPath</code></td>
+<td>Ruta a la carpeta raíz del producto (debe contener <code>.sln</code>)</td>
+<td>Directorio actual</td>
+</tr>
+<tr>
+<td><code>-ProjectName</code></td>
+<td>Nombre del proyecto. Si se omite, se detecta automáticamente del <code>.sln</code></td>
+<td>Auto-detectado</td>
+</tr>
+<tr>
+<td><code>-DryRun</code></td>
+<td>Previsualiza los cambios sin modificar nada</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>-MinVersion</code></td>
+<td>Versión mínima requerida de los paquetes Flexygo</td>
+<td><code>1.2.0.21</code></td>
+</tr>
+<tr>
+<td><code>-TargetVersion</code></td>
+<td>Versión objetivo que se escribe en las plantillas</td>
+<td><code>1.3.0.1</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="6-que-hace-el-script">6. Qué hace el script</h2>
+<p>La ejecución se divide en cuatro fases internas:</p>
+<h3 id="fase-1-validacion-de-precondiciones">Fase 1 — Validación de precondiciones</h3>
+<p>Verifica que <code>-ProjectPath</code> existe y contiene un <code>.sln</code>, detecta el nombre del proyecto y comprueba que todos los paquetes <code>Flexygo.*</code> sean <code>&gt;= 1.2.0.21</code>. Si alguna validación falla, el script se detiene con un mensaje de error descriptivo.</p>
+<h3 id="fase-2-seguridad-git">Fase 2 — Seguridad git</h3>
+<ul>
+<li><strong>Con repositorio git:</strong> verifica árbol de trabajo limpio. Si hay cambios pendientes, se detiene.</li>
+<li><strong>Sin repositorio git:</strong> inicializa uno y realiza commit del estado pre-migración.</li>
+<li><strong>Sin <code>git</code> en el PATH:</strong> muestra advertencia y continúa sin la comprobación.</li>
+</ul>
+<h3 id="fase-3-construccion-del-plan">Fase 3 — Construcción del plan</h3>
+<p>Calcula todas las acciones necesarias comparando el estado actual del proyecto con el esperado por las plantillas. El resultado se muestra en pantalla antes de aplicar nada:</p>
+<table>
+<thead>
+<tr>
+<th>Indicador</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[CREATE]</code></td>
+<td>Archivo nuevo que será creado</td>
+</tr>
+<tr>
+<td><code>[UPDATE]</code></td>
+<td>Archivo existente que será reescrito</td>
+</tr>
+<tr>
+<td><code>[DELETE]</code></td>
+<td>Archivo o carpeta que será eliminado</td>
+</tr>
+<tr>
+<td><code>[MUTATE]</code></td>
+<td><code>.csproj</code>, <code>.sqlproj</code> o <code>.gitignore</code> con modificaciones de XML o texto</td>
+</tr>
+<tr>
+<td><code>[SKIP]</code></td>
+<td>Sin cambios necesarios (ya está actualizado)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fase-4-ejecucion">Fase 4 — Ejecución</h3>
+<p>Tras confirmar con <code>yes</code> / <code>y</code>:</p>
+<ol>
+<li>Crea directorios y escribe todos los archivos de plantilla.</li>
+<li>Elimina archivos y carpetas obsoletos.</li>
+<li>Aplica mutaciones a los <code>.csproj</code>, <code>.sqlproj</code> y <code>.gitignore</code>.</li>
+<li>Guarda un log de ejecución en la raíz del proyecto: <code>migration-log-YYYYMMDD-HHMMSS.txt</code>.</li>
+</ol>
+<hr>
+<h2 id="7-cambios-aplicados">7. Cambios aplicados</h2>
+<h3 id="archivos-creados-o-actualizados">Archivos creados o actualizados</h3>
+<table>
+<thead>
+<tr>
+<th>Archivo destino</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>*.Backend.nuspec</code></td>
+<td>Spec de packaging del Backend</td>
+</tr>
+<tr>
+<td><code>*.Frontend.nuspec</code></td>
+<td>Spec de packaging del Frontend</td>
+</tr>
+<tr>
+<td><code>*.Library.nuspec</code></td>
+<td><strong>Nuevo</strong> — spec de packaging de la librería (separado del Backend)</td>
+</tr>
+<tr>
+<td><code>*.Conf.Database.nuspec</code></td>
+<td>Spec de packaging de la BD de configuración</td>
+</tr>
+<tr>
+<td><code>*.Data.Database.nuspec</code></td>
+<td>Spec de packaging de la BD de datos</td>
+</tr>
+<tr>
+<td><code>*.Backend/conf/appsettings.json</code></td>
+<td>Configuración runtime del Backend</td>
+</tr>
+<tr>
+<td><code>*.Backend/conf/appsettings.Development.json</code></td>
+<td>Configuración de entorno de desarrollo del Backend</td>
+</tr>
+<tr>
+<td><code>*.Frontend/conf/appsettings.json</code></td>
+<td>Configuración runtime del Frontend</td>
+</tr>
+<tr>
+<td><code>*.Frontend/conf/appsettings.Development.json</code></td>
+<td>Configuración de entorno de desarrollo del Frontend</td>
+</tr>
+<tr>
+<td><code>*.Backend/buildTransitive/*.Backend.props</code></td>
+<td>Props de build transitivo del Backend</td>
+</tr>
+<tr>
+<td><code>*.Frontend/buildTransitive/*.Frontend.props</code></td>
+<td>Props de build transitivo del Frontend</td>
+</tr>
+<tr>
+<td><code>*.Conf.Database/buildTransitive/*.Conf.Database.props</code></td>
+<td>Props de build transitivo de Conf.Database</td>
+</tr>
+<tr>
+<td><code>*.Conf.Database/buildTransitive/*.Conf.Database.targets</code></td>
+<td>Targets de build transitivo de Conf.Database</td>
+</tr>
+<tr>
+<td><code>*.Data.Database/buildTransitive/*.Data.Database.props</code></td>
+<td>Props de build transitivo de Data.Database</td>
+</tr>
+<tr>
+<td><code>*.Frontend/tsconfig.json</code></td>
+<td>Configuración TypeScript (movida desde <code>wwwroot/</code>)</td>
+</tr>
+<tr>
+<td><code>*.Conf.Database/local.publish.xml</code></td>
+<td>Perfil de publicación local de la BD de configuración</td>
+</tr>
+<tr>
+<td><code>*.Data.Database/local.publish.xml</code></td>
+<td>Perfil de publicación local de la BD de datos</td>
+</tr>
+<tr>
+<td><code>nuget.config</code></td>
+<td><strong>Nuevo</strong> — feeds <abbr title="Gestor de paquetes para .NET">NuGet</abbr> a nivel de solución (nuget.org, beta, prod)</td>
+</tr>
+<tr>
+<td><code>.vscode/extensions.json</code></td>
+<td><strong>Nuevo</strong> — extensiones recomendadas para VS Code</td>
+</tr>
+<tr>
+<td><code>*.Frontend/wwwroot/*/css/README.md</code></td>
+<td>Placeholder para CSS personalizado</td>
+</tr>
+<tr>
+<td><code>*.Frontend/wwwroot/*/js/README.md</code></td>
+<td>Placeholder para JS personalizado</td>
+</tr>
+</tbody>
+</table>
+<h3 id="archivos-y-carpetas-eliminados">Archivos y carpetas eliminados</h3>
+<table>
+<thead>
+<tr>
+<th>Target eliminado</th>
+<th>Motivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>*/install.map.json</code> (× 4)</td>
+<td>El instalador ahora consume directamente el output de <code>dotnet publish</code></td>
+</tr>
+<tr>
+<td><code>*.Frontend/wwwroot/css/</code></td>
+<td>Los assets estáticos se sirven vía <abbr title="Gestor de paquetes para .NET">NuGet</abbr> como <code>staticwebassets</code></td>
+</tr>
+<tr>
+<td><code>*.Frontend/wwwroot/docs/</code></td>
+<td>Ídem</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -1413,6 +1995,242 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#1-descarga-del-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Descarga del script
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ubicacion-del-script-en-tu-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Ubicación del script en tu proyecto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-requisitos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Requisitos previos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Requisitos previos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-minima-de-flexygo-12021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versión mínima de Flexygo: 1.2.0.21
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#powershell" class="md-nav__link">
+    <span class="md-ellipsis">
+      PowerShell
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estructura-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estructura del proyecto
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-seguridad-repositorio-git-y-cambios-locales" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Seguridad: repositorio git y cambios locales
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Seguridad: repositorio git y cambios locales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#si-tu-proyecto-ya-esta-en-un-repositorio-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Si tu proyecto ya está en un repositorio git
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#si-tu-proyecto-no-esta-en-un-repositorio-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Si tu proyecto NO está en un repositorio git
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ejecucion-del-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Ejecución del script
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Ejecución del script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-previsualizacion-recomendado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1 — Previsualización (recomendado)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-aplicar-la-migracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 2 — Aplicar la migración
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#especificar-el-nombre-del-proyecto-manualmente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Especificar el nombre del proyecto manualmente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametros-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parámetros disponibles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-que-hace-el-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Qué hace el script
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Qué hace el script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fase-1-validacion-de-precondiciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fase 1 — Validación de precondiciones
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fase-2-seguridad-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fase 2 — Seguridad git
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fase-3-construccion-del-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fase 3 — Construcción del plan
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fase-4-ejecucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fase 4 — Ejecución
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-cambios-aplicados" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Cambios aplicados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Cambios aplicados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#archivos-creados-o-actualizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archivos creados o actualizados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#archivos-y-carpetas-eliminados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archivos y carpetas eliminados
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                     </div>
