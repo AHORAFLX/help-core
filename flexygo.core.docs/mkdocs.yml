@@ -116,6 +116,7 @@ nav:
       - Requisitos: producto/requisitos.md
       - Plantilla: producto/plantilla.md
       - Gestión de producto: producto/gestionproducto.md
+      - Migración 1.3.0.1: producto/migracion-1-3-0-1.md
       - Extensiones IDE: producto/extension.md
       - Personalización: producto/personalizacion.md
       - MCP:
