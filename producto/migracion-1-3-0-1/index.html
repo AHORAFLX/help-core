@@ -1233,6 +1233,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#8-despues-de-la-migracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Después de la migración
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Después de la migración">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actualizar-a-la-ultima-version-con-flexygo-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actualizar a la última versión con flexygo-product
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificación
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2252,6 +2285,32 @@
 </tr>
 </tbody>
 </table>
+<hr>
+<h2 id="8-despues-de-la-migracion">8. Después de la migración</h2>
+<h3 id="actualizar-a-la-ultima-version-con-flexygo-product">Actualizar a la última versión con flexygo-product</h3>
+<p>Una vez que el script ha preparado la estructura del proyecto, el siguiente paso es actualizar los paquetes <abbr title="Gestor de paquetes para .NET">NuGet</abbr> de Flexygo a la última versión disponible usando la herramienta <strong>Flexygo Product Tools</strong>:</p>
+<div class="highlight"><pre><span></span><code>flexygo-product<span class="w"> </span>update<span class="w"> </span>-s<span class="w"> </span><span class="s2">"RUTA_A_TU_SOLUCION"</span>
+</code></pre></div>
+<p>Esto actualizará automáticamente los paquetes <code>Flexygo.Frontend</code>, <code>Flexygo.Backend</code>, <code>Flexygo.Conf.Database</code> y <code>Flexygo.Library</code> a la última versión disponible, sincronizará los recursos y hará merge de los nuevos parámetros de <code>appsettings</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Documentación de la herramienta</p>
+<p>Consulta la guía completa en <a href="../gestionproducto/">Gestión de producto</a> para más detalles sobre el uso de <code>flexygo-product update</code>.</p>
+</div>
+<hr>
+<h3 id="verificacion">Verificación</h3>
+<p>Una vez completada la migración y la actualización, comprueba que todo funciona correctamente:</p>
+<div class="admonition success">
+<p class="admonition-title">Checklist de verificación</p>
+<ul>
+<li>[ ] <strong>Compilar la solución</strong> — abre la solución en Visual Studio o ejecuta <code>dotnet build</code> y verifica que no hay errores de compilación.</li>
+<li>[ ] <strong>Publicar las bases de datos</strong> — publica <code>*.Conf.Database</code> y <code>*.Data.Database</code> en tu entorno local con los perfiles <code>local.publish.xml</code> generados por el script.</li>
+<li>[ ] <strong>Levantar la aplicación</strong> — ejecuta el proyecto y verifica que la aplicación arranca correctamente y todas las funcionalidades del producto siguen operativas.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Log de migración</p>
+<p>El script genera un archivo <code>migration-log-YYYYMMDD-HHMMSS.txt</code> en la raíz del proyecto con el detalle completo de todos los cambios aplicados. Consúltalo si encuentras algún problema.</p>
+</div>
 
 
 
@@ -2592,6 +2651,39 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-despues-de-la-migracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Después de la migración
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Después de la migración">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actualizar-a-la-ultima-version-con-flexygo-product" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actualizar a la última versión con flexygo-product
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verificacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verificación
+    </span>
+  </a>
   
 </li>
         
