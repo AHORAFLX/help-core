@@ -234,8 +234,82 @@ Tras confirmar con `yes` / `y`:
 
 ### Archivos y carpetas eliminados
 
+#### `install.map.json` (× 4)
+
 | Target eliminado | Motivo |
 |------------------|--------|
-| `*/install.map.json` (× 4) | El instalador ahora consume directamente el output de `dotnet publish` |
-| `*.Frontend/wwwroot/css/` | Los assets estáticos se sirven vía NuGet como `staticwebassets` |
-| `*.Frontend/wwwroot/docs/` | Ídem |
+| `*.Backend/install.map.json` | El instalador ahora consume directamente el output de `dotnet publish` |
+| `*.Frontend/install.map.json` | Ídem |
+| `*.Conf.Database/install.map.json` | Ídem |
+| `*.Data.Database/install.map.json` | Ídem |
+
+#### `*.Frontend/wwwroot/` — subdirectorios y archivos raíz
+
+Los assets estáticos de Flexygo ya no residen en el código fuente del producto; ahora se sirven como `staticwebassets` vía el paquete NuGet `Flexygo.Frontend`.
+
+| Target eliminado | Contenido |
+|------------------|-----------|
+| `wwwroot/css/` | Estilos/skin por defecto |
+| `wwwroot/docs/` | Documentación interna |
+| `wwwroot/img/` | Imágenes y animaciones Lottie |
+| `wwwroot/js/` | Librería JS, plugins y vistas |
+| `wwwroot/mobile/` | App móvil completa (Ionic/Capacitor) |
+| `wwwroot/reports/` | Plantillas de informes |
+| `wwwroot/Scripts/` | Typings de terceros |
+| `wwwroot/xsl/` | Hojas de transformación XSL |
+| `wwwroot/favicon.ico` | Favicon (proviene del NuGet) |
+| `wwwroot/Flexygo.Frontend.styles.css` | CSS generado por Blazor CSS isolation |
+| `wwwroot/manifest.json` | Manifest de PWA |
+| `wwwroot/tsconfig.json` | Movido a la raíz del proyecto Frontend |
+| `wwwroot/versions.json` | Manifest de versiones |
+
+#### Otros archivos y carpetas
+
+| Target eliminado | Motivo |
+|------------------|--------|
+| `*.Conf.Database/build/` | Los `.targets` se mueven a `buildTransitive/` para propagarse a todos los niveles hijos |
+| `*.Backend/updater/` | Artefactos de build del paquete padre — no son código fuente del producto |
+| `*.Frontend/updater/` | Ídem |
+| `*.Backend/Flexygo.UnitTest.deps.json` | Artefacto de runtime del UnitTest framework padre |
+| `*.Backend/Flexygo.UnitTest.runtimeconfig.json` | Ídem |
+| `*.Backend/MailLicense.xml` | Ahora proviene del paquete NuGet `Flexygo.Backend` como `contentFile` |
+
+#### Carpetas `bin/` y `obj/` (todos los proyectos)
+
+El script elimina las carpetas de compilación de los 7 proyectos para garantizar un build limpio tras la migración:
+
+`*.Backend`, `*.Frontend`, `*.Conf.Database`, `*.Data.Database`, `*.Processes`, `*.UnitTest`, `*.InterfaceTest`
+
+### Modificaciones en archivos de proyecto existentes
+
+El script aplica modificaciones quirúrgicas sobre los archivos `.csproj`, `.sqlproj` y `.gitignore` sin reemplazarlos por completo.
+
+#### Archivos `.csproj` (Backend, Frontend, Processes)
+
+| Mutación | Cambio aplicado |
+|----------|-----------------|
+| `SkipPostSharp` | Añade `<SkipPostSharp>true</SkipPostSharp>` — PostSharp viene transitivo del paquete NuGet pero estos proyectos no usan aspectos |
+| `ConfItemGroups` | Añade tres `<ItemGroup>` para gestionar la carpeta `conf/`: declaración de la carpeta, exclusión de publicación y exclusión de `.local.*` |
+| `TypeScriptCompileRemove` | Elimina entradas `<TypeScriptCompile>` que apuntaban a `wwwroot/` (el `tsconfig.json` se ha movido a la raíz del proyecto Frontend) |
+| `RemoveInstallMapJsonRef` | Elimina referencias a `install.map.json` como `<Content>` o `<None>` |
+| `RemoveProjectGuid` | Elimina `<ProjectGuid>` (obsoleto en proyectos SDK-style) |
+| `RemoveFolderEntry` | Elimina entradas `<Folder>` obsoletas |
+| `RemoveMailLicenseRef` | Elimina la referencia a `MailLicense.xml` del Backend — ahora proviene del paquete NuGet como `contentFile` |
+
+#### Archivos `.sqlproj` (Conf.Database, Data.Database)
+
+| Mutación | Cambio aplicado |
+|----------|-----------------|
+| `FlexygoParentDatabasePackage` | Actualiza la referencia al paquete NuGet padre de la base de datos |
+| `SqlCmdVariableDefaults` | Actualiza los valores por defecto de las variables `SqlCmd` |
+| `RemoveTargetDatabaseSet` | Elimina `<TargetDatabaseSet>` obsoleto |
+| `RemoveRenameMe` | Elimina referencias `RenameMe` residuales |
+| `EnsureDboSubFolders` | Asegura la existencia de las subcarpetas `dbo/` necesarias |
+
+#### `.gitignore`
+
+| Acción | Detalle |
+|--------|---------|
+| Añade `script/` | La carpeta del script de migración se ignora automáticamente antes de ejecutar la comprobación de árbol limpio |
+| Elimina líneas conflictivas | Elimina entradas que puedan colisionar con la nueva estructura de archivos |
+| Añade entradas requeridas | Añade las entradas necesarias para el nuevo layout del proyecto |
