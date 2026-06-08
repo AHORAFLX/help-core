@@ -1142,6 +1142,90 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Archivos y carpetas eliminados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installmapjson-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      install.map.json (× 4)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontendwwwroot-subdirectorios-y-archivos-raiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      *.Frontend/wwwroot/ — subdirectorios y archivos raíz
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otros-archivos-y-carpetas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Otros archivos y carpetas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carpetas-bin-y-obj-todos-los-proyectos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carpetas bin/ y obj/ (todos los proyectos)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modificaciones-en-archivos-de-proyecto-existentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modificaciones en archivos de proyecto existentes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modificaciones en archivos de proyecto existentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#archivos-csproj-backend-frontend-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archivos .csproj (Backend, Frontend, Processes)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#archivos-sqlproj-confdatabase-datadatabase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archivos .sqlproj (Conf.Database, Data.Database)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitignore" class="md-nav__link">
+    <span class="md-ellipsis">
+      .gitignore
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1944,6 +2028,7 @@
 </tbody>
 </table>
 <h3 id="archivos-y-carpetas-eliminados">Archivos y carpetas eliminados</h3>
+<h4 id="installmapjson-4"><code>install.map.json</code> (× 4)</h4>
 <table>
 <thead>
 <tr>
@@ -1953,16 +2038,217 @@
 </thead>
 <tbody>
 <tr>
-<td><code>*/install.map.json</code> (× 4)</td>
+<td><code>*.Backend/install.map.json</code></td>
 <td>El instalador ahora consume directamente el output de <code>dotnet publish</code></td>
 </tr>
 <tr>
-<td><code>*.Frontend/wwwroot/css/</code></td>
-<td>Los assets estáticos se sirven vía <abbr title="Gestor de paquetes para .NET">NuGet</abbr> como <code>staticwebassets</code></td>
+<td><code>*.Frontend/install.map.json</code></td>
+<td>Ídem</td>
 </tr>
 <tr>
-<td><code>*.Frontend/wwwroot/docs/</code></td>
+<td><code>*.Conf.Database/install.map.json</code></td>
 <td>Ídem</td>
+</tr>
+<tr>
+<td><code>*.Data.Database/install.map.json</code></td>
+<td>Ídem</td>
+</tr>
+</tbody>
+</table>
+<h4 id="frontendwwwroot-subdirectorios-y-archivos-raiz"><code>*.Frontend/wwwroot/</code> — subdirectorios y archivos raíz</h4>
+<p>Los assets estáticos de Flexygo ya no residen en el código fuente del producto; ahora se sirven como <code>staticwebassets</code> vía el paquete <abbr title="Gestor de paquetes para .NET">NuGet</abbr> <code>Flexygo.Frontend</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Target eliminado</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>wwwroot/css/</code></td>
+<td>Estilos/skin por defecto</td>
+</tr>
+<tr>
+<td><code>wwwroot/docs/</code></td>
+<td>Documentación interna</td>
+</tr>
+<tr>
+<td><code>wwwroot/img/</code></td>
+<td>Imágenes y animaciones Lottie</td>
+</tr>
+<tr>
+<td><code>wwwroot/js/</code></td>
+<td>Librería JS, plugins y vistas</td>
+</tr>
+<tr>
+<td><code>wwwroot/mobile/</code></td>
+<td>App móvil completa (Ionic/Capacitor)</td>
+</tr>
+<tr>
+<td><code>wwwroot/reports/</code></td>
+<td>Plantillas de informes</td>
+</tr>
+<tr>
+<td><code>wwwroot/Scripts/</code></td>
+<td>Typings de terceros</td>
+</tr>
+<tr>
+<td><code>wwwroot/xsl/</code></td>
+<td>Hojas de transformación XSL</td>
+</tr>
+<tr>
+<td><code>wwwroot/favicon.ico</code></td>
+<td>Favicon (proviene del <abbr title="Gestor de paquetes para .NET">NuGet</abbr>)</td>
+</tr>
+<tr>
+<td><code>wwwroot/Flexygo.Frontend.styles.css</code></td>
+<td>CSS generado por Blazor CSS isolation</td>
+</tr>
+<tr>
+<td><code>wwwroot/manifest.json</code></td>
+<td>Manifest de PWA</td>
+</tr>
+<tr>
+<td><code>wwwroot/tsconfig.json</code></td>
+<td>Movido a la raíz del proyecto Frontend</td>
+</tr>
+<tr>
+<td><code>wwwroot/versions.json</code></td>
+<td>Manifest de versiones</td>
+</tr>
+</tbody>
+</table>
+<h4 id="otros-archivos-y-carpetas">Otros archivos y carpetas</h4>
+<table>
+<thead>
+<tr>
+<th>Target eliminado</th>
+<th>Motivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>*.Conf.Database/build/</code></td>
+<td>Los <code>.targets</code> se mueven a <code>buildTransitive/</code> para propagarse a todos los niveles hijos</td>
+</tr>
+<tr>
+<td><code>*.Backend/updater/</code></td>
+<td>Artefactos de build del paquete padre — no son código fuente del producto</td>
+</tr>
+<tr>
+<td><code>*.Frontend/updater/</code></td>
+<td>Ídem</td>
+</tr>
+<tr>
+<td><code>*.Backend/Flexygo.UnitTest.deps.json</code></td>
+<td>Artefacto de runtime del UnitTest framework padre</td>
+</tr>
+<tr>
+<td><code>*.Backend/Flexygo.UnitTest.runtimeconfig.json</code></td>
+<td>Ídem</td>
+</tr>
+<tr>
+<td><code>*.Backend/MailLicense.xml</code></td>
+<td>Ahora proviene del paquete <abbr title="Gestor de paquetes para .NET">NuGet</abbr> <code>Flexygo.Backend</code> como <code>contentFile</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="carpetas-bin-y-obj-todos-los-proyectos">Carpetas <code>bin/</code> y <code>obj/</code> (todos los proyectos)</h4>
+<p>El script elimina las carpetas de compilación de los 7 proyectos para garantizar un build limpio tras la migración:</p>
+<p><code>*.Backend</code>, <code>*.Frontend</code>, <code>*.Conf.Database</code>, <code>*.Data.Database</code>, <code>*.Processes</code>, <code>*.UnitTest</code>, <code>*.InterfaceTest</code></p>
+<h3 id="modificaciones-en-archivos-de-proyecto-existentes">Modificaciones en archivos de proyecto existentes</h3>
+<p>El script aplica modificaciones quirúrgicas sobre los archivos <code>.csproj</code>, <code>.sqlproj</code> y <code>.gitignore</code> sin reemplazarlos por completo.</p>
+<h4 id="archivos-csproj-backend-frontend-processes">Archivos <code>.csproj</code> (Backend, Frontend, Processes)</h4>
+<table>
+<thead>
+<tr>
+<th>Mutación</th>
+<th>Cambio aplicado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SkipPostSharp</code></td>
+<td>Añade <code>&lt;SkipPostSharp&gt;true&lt;/SkipPostSharp&gt;</code> — PostSharp viene transitivo del paquete <abbr title="Gestor de paquetes para .NET">NuGet</abbr> pero estos proyectos no usan aspectos</td>
+</tr>
+<tr>
+<td><code>ConfItemGroups</code></td>
+<td>Añade tres <code>&lt;ItemGroup&gt;</code> para gestionar la carpeta <code>conf/</code>: declaración de la carpeta, exclusión de publicación y exclusión de <code>.local.*</code></td>
+</tr>
+<tr>
+<td><code>TypeScriptCompileRemove</code></td>
+<td>Elimina entradas <code>&lt;TypeScriptCompile&gt;</code> que apuntaban a <code>wwwroot/</code> (el <code>tsconfig.json</code> se ha movido a la raíz del proyecto Frontend)</td>
+</tr>
+<tr>
+<td><code>RemoveInstallMapJsonRef</code></td>
+<td>Elimina referencias a <code>install.map.json</code> como <code>&lt;Content&gt;</code> o <code>&lt;None&gt;</code></td>
+</tr>
+<tr>
+<td><code>RemoveProjectGuid</code></td>
+<td>Elimina <code>&lt;ProjectGuid&gt;</code> (obsoleto en proyectos <abbr title="Software Development Kit">SDK</abbr>-style)</td>
+</tr>
+<tr>
+<td><code>RemoveFolderEntry</code></td>
+<td>Elimina entradas <code>&lt;Folder&gt;</code> obsoletas</td>
+</tr>
+<tr>
+<td><code>RemoveMailLicenseRef</code></td>
+<td>Elimina la referencia a <code>MailLicense.xml</code> del Backend — ahora proviene del paquete <abbr title="Gestor de paquetes para .NET">NuGet</abbr> como <code>contentFile</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="archivos-sqlproj-confdatabase-datadatabase">Archivos <code>.sqlproj</code> (Conf.Database, Data.Database)</h4>
+<table>
+<thead>
+<tr>
+<th>Mutación</th>
+<th>Cambio aplicado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FlexygoParentDatabasePackage</code></td>
+<td>Actualiza la referencia al paquete <abbr title="Gestor de paquetes para .NET">NuGet</abbr> padre de la base de datos</td>
+</tr>
+<tr>
+<td><code>SqlCmdVariableDefaults</code></td>
+<td>Actualiza los valores por defecto de las variables <code>SqlCmd</code></td>
+</tr>
+<tr>
+<td><code>RemoveTargetDatabaseSet</code></td>
+<td>Elimina <code>&lt;TargetDatabaseSet&gt;</code> obsoleto</td>
+</tr>
+<tr>
+<td><code>RemoveRenameMe</code></td>
+<td>Elimina referencias <code>RenameMe</code> residuales</td>
+</tr>
+<tr>
+<td><code>EnsureDboSubFolders</code></td>
+<td>Asegura la existencia de las subcarpetas <code>dbo/</code> necesarias</td>
+</tr>
+</tbody>
+</table>
+<h4 id="gitignore"><code>.gitignore</code></h4>
+<table>
+<thead>
+<tr>
+<th>Acción</th>
+<th>Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Añade <code>script/</code></td>
+<td>La carpeta del script de migración se ignora automáticamente antes de ejecutar la comprobación de árbol limpio</td>
+</tr>
+<tr>
+<td>Elimina líneas conflictivas</td>
+<td>Elimina entradas que puedan colisionar con la nueva estructura de archivos</td>
+</tr>
+<tr>
+<td>Añade entradas requeridas</td>
+<td>Añade las entradas necesarias para el nuevo layout del proyecto</td>
 </tr>
 </tbody>
 </table>
@@ -2222,6 +2508,90 @@
       Archivos y carpetas eliminados
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Archivos y carpetas eliminados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installmapjson-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      install.map.json (× 4)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontendwwwroot-subdirectorios-y-archivos-raiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      *.Frontend/wwwroot/ — subdirectorios y archivos raíz
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otros-archivos-y-carpetas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Otros archivos y carpetas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carpetas-bin-y-obj-todos-los-proyectos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Carpetas bin/ y obj/ (todos los proyectos)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modificaciones-en-archivos-de-proyecto-existentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modificaciones en archivos de proyecto existentes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modificaciones en archivos de proyecto existentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#archivos-csproj-backend-frontend-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archivos .csproj (Backend, Frontend, Processes)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#archivos-sqlproj-confdatabase-datadatabase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Archivos .sqlproj (Conf.Database, Data.Database)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitignore" class="md-nav__link">
+    <span class="md-ellipsis">
+      .gitignore
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
