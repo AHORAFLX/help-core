@@ -313,3 +313,35 @@ El script aplica modificaciones quirúrgicas sobre los archivos `.csproj`, `.sql
 | Añade `script/` | La carpeta del script de migración se ignora automáticamente antes de ejecutar la comprobación de árbol limpio |
 | Elimina líneas conflictivas | Elimina entradas que puedan colisionar con la nueva estructura de archivos |
 | Añade entradas requeridas | Añade las entradas necesarias para el nuevo layout del proyecto |
+
+---
+
+## 8. Después de la migración
+
+### Actualizar a la última versión con flexygo-product
+
+Una vez que el script ha preparado la estructura del proyecto, el siguiente paso es actualizar los paquetes NuGet de Flexygo a la última versión disponible usando la herramienta **Flexygo Product Tools**:
+
+```bash
+flexygo-product update -s "RUTA_A_TU_SOLUCION"
+```
+
+Esto actualizará automáticamente los paquetes `Flexygo.Frontend`, `Flexygo.Backend`, `Flexygo.Conf.Database` y `Flexygo.Library` a la última versión disponible, sincronizará los recursos y hará merge de los nuevos parámetros de `appsettings`.
+
+!!! tip "Documentación de la herramienta"
+    Consulta la guía completa en [Gestión de producto](./gestionproducto.md) para más detalles sobre el uso de `flexygo-product update`.
+
+---
+
+### Verificación
+
+Una vez completada la migración y la actualización, comprueba que todo funciona correctamente:
+
+!!! success "Checklist de verificación"
+
+    - [ ] **Compilar la solución** — abre la solución en Visual Studio o ejecuta `dotnet build` y verifica que no hay errores de compilación.
+    - [ ] **Publicar las bases de datos** — publica `*.Conf.Database` y `*.Data.Database` en tu entorno local con los perfiles `local.publish.xml` generados por el script.
+    - [ ] **Levantar la aplicación** — ejecuta el proyecto y verifica que la aplicación arranca correctamente y todas las funcionalidades del producto siguen operativas.
+
+!!! note "Log de migración"
+    El script genera un archivo `migration-log-YYYYMMDD-HHMMSS.txt` en la raíz del proyecto con el detalle completo de todos los cambios aplicados. Consúltalo si encuentras algún problema.
