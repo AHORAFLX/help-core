@@ -105,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#personalizacion" class="md-skip">
+        <a href="#personalizacion-de-assets" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -968,28 +968,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#organizacion-de-archivos-de-personalizacion" class="md-nav__link">
+  <a href="#niveles-de-personalizacion-y-prioridad" class="md-nav__link">
     <span class="md-ellipsis">
-      Organización de archivos de personalización
+      Niveles de personalización y prioridad
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#variables-de-color-del-producto" class="md-nav__link">
-    <span class="md-ellipsis">
-      Variables de color del producto
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Variables de color del producto">
+    <nav class="md-nav" aria-label="Niveles de personalización y prioridad">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#registro-de-variables-en-base-de-datos" class="md-nav__link">
+  <a href="#descubrimiento-automatico-de-la-carpeta-de-producto" class="md-nav__link">
     <span class="md-ellipsis">
-      Registro de variables en base de datos
+      Descubrimiento automático de la carpeta de producto
     </span>
   </a>
   
@@ -1001,9 +992,120 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#paginas-de-autenticacion" class="md-nav__link">
+  <a href="#estructura-de-directorios-esperada" class="md-nav__link">
     <span class="md-ellipsis">
-      Páginas de autenticación
+      Estructura de directorios esperada
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructura de directorios esperada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nivel-producto-carpeta-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nivel Producto ({carpeta-producto}/)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nivel-instalacion-custom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nivel Instalación (custom/)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assets-soportados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assets Soportados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Assets Soportados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manifestjson-manifiesto-pwa" class="md-nav__link">
+    <span class="md-ellipsis">
+      manifest.json — Manifiesto PWA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#themeless-variables-de-tema-y-propiedades-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      theme.less — Variables de Tema y Propiedades CSS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faviconico-icono-de-pestana-del-navegador" class="md-nav__link">
+    <span class="md-ellipsis">
+      favicon.ico — Icono de Pestaña del Navegador
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accountcss-estilos-genericos-de-paginas-de-cuenta" class="md-nav__link">
+    <span class="md-ellipsis">
+      account.css — Estilos Genéricos de Páginas de Cuenta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accountjs-scripts-genericos-de-paginas-de-cuenta" class="md-nav__link">
+    <span class="md-ellipsis">
+      account.js — Scripts Genéricos de Páginas de Cuenta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#css-y-js-especificos-por-pagina" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSS y JS Específicos por Página
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-rapida-todas-las-rutas-soportadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referencia Rápida: Todas las Rutas Soportadas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitaciones-y-comportamiento-de-degradacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitaciones y Comportamiento de Degradación
     </span>
   </a>
   
@@ -1447,83 +1549,527 @@
 
 
 
-<h1 id="personalizacion">Personalización</h1>
-<p>Flexygo Core permite personalizar la apariencia visual del producto sin modificar el núcleo de la plataforma. Las personalizaciones se realizan en archivos dentro del proyecto Frontend y <strong>sobreviven a las actualizaciones de la aplicación</strong>.</p>
+<h1 id="personalizacion-de-assets">Personalización de Assets</h1>
+<p>Flexygo Core permite personalizar la apariencia visual del producto en todos los niveles sin modificar el núcleo de la plataforma. Las personalizaciones se realizan mediante archivos de assets — CSS, JS, favicon, manifiesto PWA y variables de tema — que <strong>sobreviven a las actualizaciones</strong> de la aplicación.</p>
 <hr>
-<h2 id="organizacion-de-archivos-de-personalizacion">Organización de archivos de personalización</h2>
-<div class="highlight"><pre><span></span><code>{Nombre}.Frontend/
-└── wwwroot/
-    └── custom/
-        ├── css/
-        │   ├── skins/
-        │   │   └── CssVars.less   ← Variables de color propias del producto
-        │   └── account.css        ← Estilos de las páginas de autenticación
-        └── images/
-            └──                    ← Imágenes personalizadas (logo, marca de agua…)
-</code></pre></div>
-<p>Estos archivos están fuera del código de Flexygo Core y se mantienen intactos en cada actualización.</p>
-<hr>
-<h2 id="variables-de-color-del-producto">Variables de color del producto</h2>
-<p>Las variables de color del producto se definen en:</p>
-<div class="highlight"><pre><span></span><code>{Nombre}.Frontend/wwwroot/custom/css/skins/CssVars.less
-</code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">Ruta y nombre obligatorios</p>
-<p>El archivo debe llamarse exactamente <code>CssVars.less</code> y estar en la ruta <code>wwwroot/custom/css/skins/</code>. Cualquier otra ubicación o nombre será ignorado por Flexygo Core.</p>
-</div>
-<p>Este archivo usa <strong>Less</strong> y la función <code>dbColor()</code> para leer colores almacenados en base de datos, exponiéndolos luego como variables CSS estándar para usarlos en todo el producto.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Mapeo de colores desde base de datos</span>
-<span class="nv">@ad</span><span class="nt">-mensajes-user</span><span class="o">:</span><span class="w">  </span><span class="nt">dbColor</span><span class="o">(</span><span class="nt">ADMessageUser</span><span class="o">);</span>
-<span class="nv">@ad</span><span class="nt">-mensajes-agent</span><span class="o">:</span><span class="w"> </span><span class="nt">dbColor</span><span class="o">(</span><span class="nt">ADTicketsUser</span><span class="o">);</span>
-<span class="nv">@ad</span><span class="nt">-note</span><span class="o">:</span><span class="w">           </span><span class="nt">dbColor</span><span class="o">(</span><span class="nt">noteTickets</span><span class="o">);</span>
-
-<span class="c1">// Exposición como variables CSS</span>
-<span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nv">--ad-mensajes-user</span><span class="p">:</span><span class="w">  </span><span class="o">@</span><span class="n">ad-mensajes-user</span><span class="p">;</span>
-<span class="w">    </span><span class="nv">--ad-mensajes-agent</span><span class="p">:</span><span class="w"> </span><span class="o">@</span><span class="n">ad-mensajes-agent</span><span class="p">;</span>
-<span class="w">    </span><span class="nv">--ad-note</span><span class="p">:</span><span class="w">           </span><span class="o">@</span><span class="n">ad-note</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Una vez definidas, las variables <code>--ad-*</code> están disponibles en cualquier hoja de estilos del producto.</p>
-<h3 id="registro-de-variables-en-base-de-datos">Registro de variables en base de datos</h3>
-<p>Para que <code>dbColor()</code> pueda resolver el valor de una variable, esta debe estar dada de alta en la tabla <strong><code>Skins_Variables</code></strong> de la base de datos de configuración. Puedes hacerlo de dos formas:</p>
+<h2 id="niveles-de-personalizacion-y-prioridad">Niveles de personalización y prioridad</h2>
+<p>Flexygo resuelve los assets mediante una <strong>cadena de 3 niveles</strong>. Cada nivel puede proporcionar su propia versión de cualquier archivo soportado. Los niveles superiores tienen prioridad.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Prioridad</th>
+<th>Nivel</th>
+<th>Raíz de ruta</th>
+<th>Quién lo usa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1 <em>(mayor)</em></td>
+<td><strong>Instalación</strong></td>
+<td><code>custom/</code></td>
+<td>Instalaciones de cliente final</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td><strong>Producto</strong></td>
+<td><code>{carpeta-producto}/</code></td>
+<td>Branding del producto / white-label</td>
+</tr>
+<tr>
+<td style="text-align: center;">3 <em>(menor)</em></td>
+<td><strong>Flexygo</strong></td>
+<td>(raíz de wwwroot)</td>
+<td>Valores nativos de Flexygo</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cómo funciona la prioridad:</strong></p>
 <ul>
-<li><strong>Directamente en la tabla</strong> <code>Skins_Variables</code>, insertando la fila con el nombre de la variable y su valor.</li>
-<li><strong>Desde el apartado Skins</strong> de la aplicación, abriendo el skin activo y añadiendo una nueva variable desde la interfaz.</li>
+<li>Para archivos <strong>CSS/JS</strong>, se emiten en la página todos los niveles que contengan el archivo, en orden de menor a mayor prioridad. La cascada CSS del navegador y el orden de ejecución de scripts permiten que las personalizaciones de mayor prioridad ganen.</li>
+<li>Para archivos <strong>únicos</strong> (<code>manifest.json</code>, <code>favicon.ico</code>), solo se usa el archivo encontrado con mayor prioridad (<em>first-found-wins</em>).</li>
 </ul>
+<h3 id="descubrimiento-automatico-de-la-carpeta-de-producto">Descubrimiento automático de la carpeta de producto</h3>
+<p>La carpeta de producto se <strong>descubre automáticamente</strong> al iniciar la aplicación — no necesitas configurar su nombre. El sistema explora los subdirectorios de <code>wwwroot</code> en busca de uno que contenga la misma estructura de directorios que un asset nativo de Flexygo. La primera coincidencia gana.</p>
+<div class="admonition info">
+<p class="admonition-title">Convención: carpeta creada por el instalador</p>
+<p>El <strong>instalador de Flexygo Core</strong> ya crea automáticamente la carpeta de producto durante la creación o migración de un proyecto. Esta es la carpeta que debes usar como convención para todas tus personalizaciones a nivel de producto. No es necesario que crees una manualmente ni que adivines el nombre — utiliza la que el instalador ha generado.</p>
+</div>
 <div class="admonition warning">
-<p class="admonition-title">Incluye las variables en los scripts del proyecto</p>
-<p>Toda variable nueva que añadas debe estar scriptada en los archivos de base de datos del proyecto (<code>{Nombre}.Conf.Database</code>). Si no la incluyes en los scripts, se perderá al publicar la base de datos en otro entorno o al hacer una instalación limpia.</p>
+<p class="admonition-title">Nombres de carpeta válidos</p>
+<p>El nombre de la carpeta de producto solo puede contener caracteres <code>[a-zA-Z0-9_-]+</code>. Otros caracteres serán rechazados por seguridad.</p>
 </div>
 <hr>
-<h2 id="paginas-de-autenticacion">Páginas de autenticación</h2>
-<p>Los estilos de las páginas de Login, Olvidé mi contraseña, 2FA y similares se controlan en:</p>
-<div class="highlight"><pre><span></span><code>{Nombre}.Frontend/wwwroot/custom/css/account.css
+<h2 id="estructura-de-directorios-esperada">Estructura de directorios esperada</h2>
+<h3 id="nivel-producto-carpeta-producto">Nivel Producto (<code>{carpeta-producto}/</code>)</h3>
+<div class="highlight"><pre><span></span><code>wwwroot/
+  mi-producto/                       ← Tu carpeta de producto (cualquier nombre válido)
+    manifest.json                    ← Manifiesto PWA
+    favicon.ico                      ← Favicon del producto
+    css/
+      theme.less                     ← Variables de tema del producto
+      views/
+        account/
+          account.css                ← CSS genérico de cuenta
+          login/login.css            ← CSS específico de página
+          register/register.css
+          forgot/forgot.css
+          authentication/authentication.css
+          manage-password/manage-password.css
+    js/
+      views/
+        account/
+          account.js                 ← JS genérico de cuenta
+          login/login.js             ← JS específico de página
+          register/register.js
+          forgot/forgot.js
+          authentication/authentication.js
+          manage-password/manage-password.js
 </code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">Ruta y nombre obligatorios</p>
-<p>El archivo debe llamarse exactamente <code>account.css</code> y estar en la ruta <code>wwwroot/custom/css/</code>. Cualquier otra ubicación o nombre será ignorado por Flexygo Core.</p>
-</div>
-<p>Este archivo se carga automáticamente en todas las páginas de autenticación. Puedes sobrescribir cualquier aspecto visual: fondos, colores, logos, botones, etc.</p>
-<p>Las variables CSS más habituales para personalizar son:</p>
-<div class="highlight"><pre><span></span><code><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="c">/* Imágenes */</span>
-<span class="w">  </span><span class="nv">--ah-product-logo</span><span class="p">:</span><span class="w">  </span><span class="nb">url</span><span class="p">(</span><span class="s1">'isotipo.png'</span><span class="p">);</span><span class="w">       </span><span class="c">/* Icono circular del header */</span>
-<span class="w">  </span><span class="nv">--ah-wordmark</span><span class="p">:</span><span class="w">      </span><span class="nb">url</span><span class="p">(</span><span class="s1">'logo.png'</span><span class="p">);</span><span class="w">           </span><span class="c">/* Logotipo de marca */</span>
-<span class="w">  </span><span class="nv">--ah-watermark</span><span class="p">:</span><span class="w">     </span><span class="nb">url</span><span class="p">(</span><span class="s1">'background_isotipo.png'</span><span class="p">);</span><span class="w"> </span><span class="c">/* Marca de agua de fondo */</span>
-
-<span class="w">  </span><span class="c">/* Colores */</span>
-<span class="w">  </span><span class="nv">--primary-color</span><span class="p">:</span><span class="w">    </span><span class="mh">#2E64C2</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span>
-<span class="w">  </span><span class="nv">--ah-bg-1</span><span class="p">:</span><span class="w">          </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">115</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">       </span><span class="c">/* Color inicio del degradado */</span>
-<span class="w">  </span><span class="nv">--ah-bg-2</span><span class="p">:</span><span class="w">          </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">183</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">       </span><span class="c">/* Color fin del degradado */</span>
-<span class="w">  </span><span class="nv">--ah-btn</span><span class="p">:</span><span class="w">           </span><span class="mh">#2e64c2</span><span class="p">;</span><span class="w">                    </span><span class="c">/* Color del botón principal */</span>
-<span class="w">  </span><span class="nv">--ah-btn-hover</span><span class="p">:</span><span class="w">     </span><span class="mh">#3b73d1</span><span class="p">;</span>
+<h3 id="nivel-instalacion-custom">Nivel Instalación (<code>custom/</code>)</h3>
+<div class="highlight"><pre><span></span><code>wwwroot/
+  custom/
+    manifest.json                    ← Sobrescritura de manifiesto PWA
+    favicon.ico                      ← Sobrescritura de favicon
+    css/
+      theme.less                     ← Variables de tema de instalación
+      views/
+        account/
+          account.css                ← CSS genérico de cuenta
+          login/login.css
+          register/register.css
+          ...
+    js/
+      views/
+        account/
+          account.js                 ← JS genérico de cuenta
+          login/login.js
+          register/register.js
+          ...
+</code></pre></div>
+<blockquote>
+<p><strong>Nota de compatibilidad:</strong> Existe una ruta plana heredada <code>custom/css/account.css</code> para la vista de Mantenimiento. El sistema <code>AssetOverrideResolver</code> usa la estructura anidada <code>custom/css/views/account/</code> documentada aquí. Planifica una migración futura si actualmente dependes de la ruta plana.</p>
+</blockquote>
+<hr>
+<h2 id="assets-soportados">Assets Soportados</h2>
+<h3 id="manifestjson-manifiesto-pwa"><code>manifest.json</code> — Manifiesto PWA</h3>
+<p><strong>Resolución:</strong> <em>First-found-wins</em> (solo se usa el archivo de mayor prioridad).</p>
+<table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Ruta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Instalación</td>
+<td><code>custom/manifest.json</code></td>
+</tr>
+<tr>
+<td>Producto</td>
+<td><code>{producto}/manifest.json</code></td>
+</tr>
+<tr>
+<td>Flexygo</td>
+<td><code>manifest.json</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ejemplo — Manifiesto a nivel de producto:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MiProducto"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"short_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MiProducto"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"start_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"standalone"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"icons"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">"src"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assets/icon/icon192.png"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"sizes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"192x192"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span>
+<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"src"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assets/icon/icon512.png"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"sizes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"512x512"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image/png"</span>
+<span class="w">  </span><span class="p">}],</span>
+<span class="w">  </span><span class="nt">"background_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#1a1a2e"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"theme_color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"#e94560"</span>
 <span class="p">}</span>
 </code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Sobrescritura segura</p>
-<p>Añade únicamente las reglas que quieras cambiar. No modifiques los archivos CSS del Core — esos cambios se perderán en la próxima actualización.</p>
+<p>Coloca este archivo en <code>wwwroot/{producto}/manifest.json</code>.</p>
+<hr>
+<h3 id="themeless-variables-de-tema-y-propiedades-css"><code>theme.less</code> — Variables de Tema y Propiedades CSS</h3>
+<p><strong>Propósito:</strong> Recibir valores específicos del producto desde la base de datos, asignarlos a variables Less y exponerlos como propiedades CSS personalizadas (<code>--*</code>).</p>
+<p><strong>Resolución:</strong> Se concatenan los 3 niveles (Flexygo → Producto → Instalación). El pipeline <code>ReplaceLessVars</code> procesa el <code>theme.less</code> de cada nivel: los placeholders <code>dbColor()</code>/<code>dbSize()</code> se reemplazan con valores calculados desde base de datos, y las variables Less se convierten en propiedades CSS mediante <code>:root { --*: @variable; }</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Ruta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Instalación</td>
+<td><code>custom/css/theme.less</code></td>
+</tr>
+<tr>
+<td>Producto</td>
+<td><code>{producto}/css/theme.less</code></td>
+</tr>
+<tr>
+<td>Flexygo</td>
+<td><code>css/theme.less</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Estructura de un archivo <code>theme.less</code>:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="cm">/* === PASO 1: Mapear valores de base de datos a variables Less === */</span>
+<span class="nv">@header</span><span class="nt">-color</span><span class="o">:</span><span class="w"> </span><span class="nt">dbColor</span><span class="o">(</span><span class="nt">HeaderColor</span><span class="o">);</span>
+<span class="nv">@menu</span><span class="nt">-color</span><span class="o">:</span><span class="w"> </span><span class="nt">dbColor</span><span class="o">(</span><span class="nt">MenuColor</span><span class="o">);</span>
+<span class="nv">@bg</span><span class="nt">-color</span><span class="o">:</span><span class="w"> </span><span class="nt">dbColor</span><span class="o">(</span><span class="nt">bgColor</span><span class="o">);</span>
+<span class="nv">@primary</span><span class="nt">-color</span><span class="o">:</span><span class="w"> </span><span class="nt">dbColor</span><span class="o">(</span><span class="nt">PrimaryColor</span><span class="o">);</span>
+<span class="nv">@danger</span><span class="nt">-color</span><span class="o">:</span><span class="w"> </span><span class="nt">dbColor</span><span class="o">(</span><span class="nt">DangerColor</span><span class="o">);</span>
+<span class="nv">@small</span><span class="o">:</span><span class="w"> </span><span class="nt">dbSize</span><span class="o">(</span><span class="nt">small</span><span class="o">);</span>
+<span class="nv">@large</span><span class="o">:</span><span class="w"> </span><span class="nt">dbSize</span><span class="o">(</span><span class="nt">large</span><span class="o">);</span>
+<span class="cm">/* ... variables adicionales ... */</span>
+
+<span class="cm">/* === PASO 2: Exponer como propiedades CSS personalizadas === */</span>
+<span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">color-scheme</span><span class="p">:</span><span class="w"> </span><span class="n">light</span><span class="w"> </span><span class="n">dark</span><span class="p">;</span>
+
+<span class="w">    </span><span class="err">&amp;:has(body[mode="light"])</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">color-scheme</span><span class="p">:</span><span class="w"> </span><span class="n">light</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="err">&amp;:has(body[mode="dark"])</span><span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="k">color-scheme</span><span class="p">:</span><span class="w"> </span><span class="n">dark</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nv">--header-color</span><span class="p">:</span><span class="w"> </span><span class="o">@</span><span class="n">header-color</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--menu-color</span><span class="p">:</span><span class="w"> </span><span class="o">@</span><span class="n">menu-color</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--bg-color</span><span class="p">:</span><span class="w"> </span><span class="o">@</span><span class="n">bg-color</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--primary-color</span><span class="p">:</span><span class="w"> </span><span class="o">@</span><span class="n">primary-color</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--danger-color</span><span class="p">:</span><span class="w"> </span><span class="o">@</span><span class="n">danger-color</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Ejemplo a nivel de producto</strong> — añade tus propios colores de marca:</p>
+<div class="highlight"><pre><span></span><code><span class="cm">/* mi-producto/css/theme.less */</span>
+
+<span class="cm">/* Añadir variables Less mapeadas a BD */</span>
+<span class="nv">@brand</span><span class="nt">-accent</span><span class="o">:</span><span class="w"> </span><span class="nt">dbColor</span><span class="o">(</span><span class="nt">BrandAccent</span><span class="o">);</span>
+<span class="nv">@brand</span><span class="nt">-bg</span><span class="o">:</span><span class="w"> </span><span class="nt">dbColor</span><span class="o">(</span><span class="nt">BrandBg</span><span class="o">);</span>
+<span class="nv">@brand</span><span class="nt">-text</span><span class="o">:</span><span class="w"> </span><span class="nt">dbColor</span><span class="o">(</span><span class="nt">BrandText</span><span class="o">);</span>
+
+<span class="cm">/* Exponer propiedades CSS de marca */</span>
+<span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">--brand-accent</span><span class="p">:</span><span class="w"> </span><span class="o">@</span><span class="n">brand-accent</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--brand-bg</span><span class="p">:</span><span class="w"> </span><span class="o">@</span><span class="n">brand-bg</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--brand-text</span><span class="p">:</span><span class="w"> </span><span class="o">@</span><span class="n">brand-text</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--brand-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="nv">--brand-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">4</span><span class="kt">px</span><span class="w"> </span><span class="mi">24</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.3</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Solo dos bloques permitidos</p>
+<p><code>theme.less</code> solo admite dos tipos de bloques: (1) definiciones <code>@variable: dbColor()/dbSize()</code>, y (2) el bloque <code>:root { --*: @variable; }</code>. No añadas mixins, reglas CSS ni otras construcciones — pertenecen a archivos <code>.less</code> separados.</p>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Nuevas variables en base de datos</p>
+<p><code>dbColor(Nombre)</code> y <code>dbSize(Nombre)</code> se reemplazan en tiempo de ejecución con valores de la base de datos de configuración. Si introduces nuevas claves, regístralas en la tabla <code>Skins_Variables</code> desde el apartado <strong>Skins</strong> de la aplicación o directamente en la base de datos. Recuerda incluir estas variables en los scripts del proyecto (<code>{Nombre}.Conf.Database</code>) para que no se pierdan en otros entornos.</p>
+</div>
+<hr>
+<h3 id="faviconico-icono-de-pestana-del-navegador"><code>favicon.ico</code> — Icono de Pestaña del Navegador</h3>
+<p><strong>Resolución:</strong> <em>First-found-wins</em>.</p>
+<table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Ruta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Instalación</td>
+<td><code>custom/favicon.ico</code></td>
+</tr>
+<tr>
+<td>Producto</td>
+<td><code>{producto}/favicon.ico</code></td>
+</tr>
+<tr>
+<td>Flexygo</td>
+<td><code>favicon.ico</code></td>
+</tr>
+</tbody>
+</table>
+<p>Coloca un archivo <code>.ico</code> en el nivel deseado. Se recomiendan los tamaños estándar (16×16, 32×32, 48×48).</p>
+<hr>
+<h3 id="accountcss-estilos-genericos-de-paginas-de-cuenta"><code>account.css</code> — Estilos Genéricos de Páginas de Cuenta</h3>
+<p><strong>Resolución:</strong> Los 3 niveles se emiten como etiquetas <code>&lt;link&gt;</code> en orden: Flexygo → Producto → Instalación. La cascada del navegador permite que las reglas posteriores sobrescriban a las anteriores.</p>
+<table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Ruta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Instalación</td>
+<td><code>custom/css/views/account/account.css</code></td>
+</tr>
+<tr>
+<td>Producto</td>
+<td><code>{producto}/css/views/account/account.css</code></td>
+</tr>
+<tr>
+<td>Flexygo</td>
+<td><code>css/views/account/account.css</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ejemplo de branding a nivel de producto:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c">/* mi-producto/css/views/account/account.css */</span>
+
+<span class="c">/* Reemplazar el logo del producto */</span>
+<span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nv">--product-logo</span><span class="p">:</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="sx">mi-producto-logo.svg</span><span class="p">);</span>
+<span class="w">    </span><span class="nv">--product-background</span><span class="p">:</span><span class="w"> </span><span class="nb">url</span><span class="p">(</span><span class="sx">mi-producto-background.svg</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c">/* Estilizar la tarjeta de cuenta */</span>
+<span class="p">.</span><span class="nc">account-card</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="w"> </span><span class="mi">32</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">233</span><span class="p">,</span><span class="w"> </span><span class="mi">69</span><span class="p">,</span><span class="w"> </span><span class="mi">96</span><span class="p">,</span><span class="w"> </span><span class="mf">0.15</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c">/* Estilizar el botón de login */</span>
+<span class="p">.</span><span class="nc">account-card</span><span class="w"> </span><span class="p">.</span><span class="nc">account-button</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--brand-accent</span><span class="p">,</span><span class="w"> </span><span class="mh">#e94560</span><span class="p">);</span>
+<span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#fff</span><span class="p">;</span>
+<span class="w">    </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">;</span>
+<span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">transition</span><span class="p">:</span><span class="w"> </span><span class="k">background-color</span><span class="w"> </span><span class="mf">0.2</span><span class="kt">s</span><span class="w"> </span><span class="kc">ease</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">account-card</span><span class="w"> </span><span class="p">.</span><span class="nc">account-button</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="nf">color-mix</span><span class="p">(</span><span class="n">in</span><span class="w"> </span><span class="n">srgb</span><span class="p">,</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--brand-accent</span><span class="p">,</span><span class="w"> </span><span class="mh">#e94560</span><span class="p">)</span><span class="w"> </span><span class="mi">80</span><span class="kt">%</span><span class="p">,</span><span class="w"> </span><span class="kc">black</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c">/* Anillo de foco en los inputs */</span>
+<span class="p">.</span><span class="nc">account-card-body</span><span class="w"> </span><span class="p">.</span><span class="nc">cell</span><span class="p">:</span><span class="nd">focus-within</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">outline-color</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--brand-accent</span><span class="p">,</span><span class="w"> </span><span class="mh">#e94560</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c">/* Fondo de la página */</span>
+<span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#0f0f1a</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-image</span><span class="p">:</span><span class="w"> </span><span class="nb">linear-gradient</span><span class="p">(</span><span class="mi">135</span><span class="kt">deg</span><span class="p">,</span><span class="w"> </span><span class="mh">#1a1a2e</span><span class="w"> </span><span class="mi">0</span><span class="kt">%</span><span class="p">,</span><span class="w"> </span><span class="mh">#16213e</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Variables CSS disponibles</strong> (definidas en el <code>account.css</code> de Flexygo):</p>
+<table>
+<thead>
+<tr>
+<th>Propiedad</th>
+<th>Propósito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--product-logo</code></td>
+<td>Imagen del logo en la cabecera del icono</td>
+</tr>
+<tr>
+<td><code>--product-background</code></td>
+<td>Imagen de fondo tras la tarjeta de login</td>
+</tr>
+<tr>
+<td><code>--card-color</code></td>
+<td>Fondo de la tarjeta de cuenta</td>
+</tr>
+<tr>
+<td><code>--border-card-color</code></td>
+<td>Color del borde de la tarjeta</td>
+</tr>
+<tr>
+<td><code>--bg-color</code></td>
+<td>Color de fondo de la página</td>
+</tr>
+<tr>
+<td><code>--bg-color-light</code></td>
+<td>Fondo de los campos de entrada</td>
+</tr>
+<tr>
+<td><code>--bg-color-dark</code></td>
+<td>Fondo de los botones</td>
+</tr>
+<tr>
+<td><code>--bg-color-dark-2</code></td>
+<td>Fondo hover de los botones</td>
+</tr>
+<tr>
+<td><code>--txt-color</code></td>
+<td>Color del texto</td>
+</tr>
+<tr>
+<td><code>--primary-color</code></td>
+<td>Anillo de foco, barra de carga, acentos</td>
+</tr>
+<tr>
+<td><code>--danger-color</code></td>
+<td>Color de error de validación</td>
+</tr>
+<tr>
+<td><code>--outstanding-color</code></td>
+<td>Scrollbar, destacados</td>
+</tr>
+<tr>
+<td><code>--success-color</code></td>
+<td>Indicadores de éxito</td>
+</tr>
+<tr>
+<td><code>--account-card-height</code></td>
+<td>Altura de la tarjeta (defecto: 600px)</td>
+</tr>
+<tr>
+<td><code>--account-card-width</code></td>
+<td>Anchura de la tarjeta (defecto: 440px)</td>
+</tr>
+<tr>
+<td><code>--input-height</code></td>
+<td>Altura de inputs/botones (defecto: 50px)</td>
+</tr>
+<tr>
+<td><code>--input-margin</code></td>
+<td>Padding horizontal en inputs</td>
+</tr>
+<tr>
+<td><code>--font-size-1</code></td>
+<td>Texto grande (3em)</td>
+</tr>
+<tr>
+<td><code>--font-size-2</code></td>
+<td>Texto normal (1em)</td>
+</tr>
+<tr>
+<td><code>--font-size-3</code></td>
+<td>Texto pequeño (0.9em)</td>
+</tr>
+<tr>
+<td><code>--placeholder-color</code></td>
+<td>Texto del placeholder</td>
+</tr>
+<tr>
+<td><code>--outline-size</code></td>
+<td>Grosor del anillo de foco</td>
+</tr>
+<tr>
+<td><code>--login-font</code></td>
+<td>Familia tipográfica para páginas de cuenta</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="accountjs-scripts-genericos-de-paginas-de-cuenta"><code>account.js</code> — Scripts Genéricos de Páginas de Cuenta</h3>
+<p><strong>Resolución:</strong> Igual que <code>account.css</code> — los 3 niveles se emiten en orden de fuente.</p>
+<table>
+<thead>
+<tr>
+<th>Nivel</th>
+<th>Ruta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Instalación</td>
+<td><code>custom/js/views/account/account.js</code></td>
+</tr>
+<tr>
+<td>Producto</td>
+<td><code>{producto}/js/views/account/account.js</code></td>
+</tr>
+<tr>
+<td>Flexygo</td>
+<td><code>js/views/account/account.js</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Scripts idempotentes</p>
+<p>Los scripts de sobrescritura deben ser <strong>idempotentes</strong>: se ejecutan junto al script nativo, no en su lugar. Usa <em>event listeners</em> en vez de reemplazar funciones globales.</p>
+</div>
+<hr>
+<h3 id="css-y-js-especificos-por-pagina">CSS y JS Específicos por Página</h3>
+<p>Cada página de Cuenta admite sus propias sobrescrituras de CSS y JS. El patrón es idéntico al de <code>account.css</code>/<code>account.js</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Página</th>
+<th>Ruta CSS</th>
+<th>Ruta JS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Login</td>
+<td><code>css/views/account/login/login.css</code></td>
+<td><code>js/views/account/login/login.js</code></td>
+</tr>
+<tr>
+<td>Registro</td>
+<td><code>css/views/account/register/register.css</code></td>
+<td><code>js/views/account/register/register.js</code></td>
+</tr>
+<tr>
+<td>Olvidé mi contraseña</td>
+<td><code>css/views/account/forgot/forgot.css</code></td>
+<td><code>js/views/account/forgot/forgot.js</code></td>
+</tr>
+<tr>
+<td>MFA</td>
+<td><code>css/views/account/authentication/authentication.css</code></td>
+<td><code>js/views/account/authentication/authentication.js</code></td>
+</tr>
+<tr>
+<td>Gestionar contraseña</td>
+<td><code>css/views/account/manage-password/manage-password.css</code></td>
+<td><code>js/views/account/manage-password/manage-password.js</code></td>
+</tr>
+</tbody>
+</table>
+<p>Todas siguen la misma estructura <code>{nivel}/{ruta}</code>. Ejemplo para CSS de login a nivel de producto:</p>
+<div class="highlight"><pre><span></span><code>wwwroot/mi-producto/css/views/account/login/login.css
+</code></pre></div>
+<hr>
+<h2 id="referencia-rapida-todas-las-rutas-soportadas">Referencia Rápida: Todas las Rutas Soportadas</h2>
+<div class="highlight"><pre><span></span><code>{nivel}/manifest.json
+{nivel}/favicon.ico
+{nivel}/css/theme.less
+{nivel}/css/views/account/account.css
+{nivel}/css/views/account/login/login.css
+{nivel}/css/views/account/register/register.css
+{nivel}/css/views/account/forgot/forgot.css
+{nivel}/css/views/account/authentication/authentication.css
+{nivel}/css/views/account/manage-password/manage-password.css
+{nivel}/js/views/account/account.js
+{nivel}/js/views/account/login/login.js
+{nivel}/js/views/account/register/register.js
+{nivel}/js/views/account/forgot/forgot.js
+{nivel}/js/views/account/authentication/authentication.js
+{nivel}/js/views/account/manage-password/manage-password.js
+</code></pre></div>
+<p>Donde <code>{nivel}</code> es:</p>
+<ul>
+<li><strong>Instalación:</strong> <code>custom</code> (ej. <code>custom/favicon.ico</code>, <code>custom/css/views/account/account.css</code>)</li>
+<li><strong>Producto:</strong> el nombre de tu carpeta de producto (ej. <code>mi-producto/favicon.ico</code>, <code>mi-producto/css/views/account/account.css</code>)</li>
+<li><strong>Flexygo:</strong> vacío / raíz (ej. <code>favicon.ico</code>, <code>css/views/account/account.css</code>)</li>
+</ul>
+<hr>
+<h2 id="limitaciones-y-comportamiento-de-degradacion">Limitaciones y Comportamiento de Degradación</h2>
+<ul>
+<li><strong>Detección de carpeta de producto</strong> se ejecuta una sola vez al inicio. Si no se encuentra ninguna carpeta de producto, el sistema se degrada a una cadena de 2 niveles (Instalación → Flexygo).</li>
+<li><strong>Múltiples carpetas de producto</strong> generan una advertencia en el log; solo se usa la primera carpeta encontrada.</li>
+<li><strong>Archivos ausentes</strong> en cualquier nivel se omiten silenciosamente — solo se emiten los archivos que existen.</li>
+<li><strong><code>manifest.json</code> y <code>favicon.ico</code></strong> usan el patrón <em>first-found-wins</em>; el fallback nativo de Flexygo siempre está disponible.</li>
+<li><strong>Sobrescritura de vistas</strong> (archivos <code>.cshtml</code>) no está soportada en la versión actual. Las sobrescrituras de CSS/JS cubren la mayoría de necesidades de personalización.</li>
+<li><strong>Hot reload</strong> de archivos de personalización no está soportado; se requiere un reinicio de la aplicación tras desplegar nuevos assets.</li>
+</ul>
 
 
 
@@ -1561,28 +2107,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#organizacion-de-archivos-de-personalizacion" class="md-nav__link">
+  <a href="#niveles-de-personalizacion-y-prioridad" class="md-nav__link">
     <span class="md-ellipsis">
-      Organización de archivos de personalización
+      Niveles de personalización y prioridad
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#variables-de-color-del-producto" class="md-nav__link">
-    <span class="md-ellipsis">
-      Variables de color del producto
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Variables de color del producto">
+    <nav class="md-nav" aria-label="Niveles de personalización y prioridad">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#registro-de-variables-en-base-de-datos" class="md-nav__link">
+  <a href="#descubrimiento-automatico-de-la-carpeta-de-producto" class="md-nav__link">
     <span class="md-ellipsis">
-      Registro de variables en base de datos
+      Descubrimiento automático de la carpeta de producto
     </span>
   </a>
   
@@ -1594,9 +2131,120 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#paginas-de-autenticacion" class="md-nav__link">
+  <a href="#estructura-de-directorios-esperada" class="md-nav__link">
     <span class="md-ellipsis">
-      Páginas de autenticación
+      Estructura de directorios esperada
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estructura de directorios esperada">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nivel-producto-carpeta-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nivel Producto ({carpeta-producto}/)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nivel-instalacion-custom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nivel Instalación (custom/)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#assets-soportados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assets Soportados
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Assets Soportados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manifestjson-manifiesto-pwa" class="md-nav__link">
+    <span class="md-ellipsis">
+      manifest.json — Manifiesto PWA
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#themeless-variables-de-tema-y-propiedades-css" class="md-nav__link">
+    <span class="md-ellipsis">
+      theme.less — Variables de Tema y Propiedades CSS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faviconico-icono-de-pestana-del-navegador" class="md-nav__link">
+    <span class="md-ellipsis">
+      favicon.ico — Icono de Pestaña del Navegador
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accountcss-estilos-genericos-de-paginas-de-cuenta" class="md-nav__link">
+    <span class="md-ellipsis">
+      account.css — Estilos Genéricos de Páginas de Cuenta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accountjs-scripts-genericos-de-paginas-de-cuenta" class="md-nav__link">
+    <span class="md-ellipsis">
+      account.js — Scripts Genéricos de Páginas de Cuenta
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#css-y-js-especificos-por-pagina" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSS y JS Específicos por Página
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencia-rapida-todas-las-rutas-soportadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Referencia Rápida: Todas las Rutas Soportadas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitaciones-y-comportamiento-de-degradacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitaciones y Comportamiento de Degradación
     </span>
   </a>
   
