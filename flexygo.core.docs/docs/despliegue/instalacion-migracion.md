@@ -11,7 +11,7 @@ El modo **Migración** del instalador permite trasladar proyectos y aplicaciones
 
 === "Migrar Productos"
 
-    ## Migrar proyectos de código
+    ## Migrar proyectos
 
     Esta opción escanea el workspace en busca de soluciones .NET Framework de Flexygo y permite migrarlas a la estructura de Flexygo Core (.NET moderno).
 
