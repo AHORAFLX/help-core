@@ -933,6 +933,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="b) Actualizar tu producto Flexygo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#productos-que-no-son-flexygo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Productos que no son Flexygo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-empaquetar-addons" class="md-nav__link">
+    <span class="md-ellipsis">
+      c) Empaquetar addons
+    </span>
+  </a>
+  
 </li>
         
       </ul>
@@ -946,6 +970,21 @@
       3. Opciones disponibles
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="3. Opciones disponibles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#codigos-de-salida" class="md-nav__link">
+    <span class="md-ellipsis">
+      Códigos de salida
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1466,7 +1505,7 @@
 
 
 <h1 id="instalacion-y-uso-de-flexygo-product-tools">Instalación y uso de Flexygo Product Tools</h1>
-<p>Las <strong>Flexygo Product Tools</strong> son un conjunto de utilidades que te permiten gestionar y mantener tus productos Flexygo Core de forma sencilla. Con ellas puedes generar tus propios paquetes <abbr title="Gestor de paquetes para .NET">NuGet</abbr> personalizados, actualizar tu solución a nuevas versiones y sincronizar recursos y configuración automáticamente.</p>
+<p>Las <strong>Flexygo Product Tools</strong> son un conjunto de utilidades que te permiten gestionar y mantener tus productos Flexygo Core de forma sencilla. Con ellas puedes generar tus propios paquetes <abbr title="Gestor de paquetes para .NET">NuGet</abbr> personalizados, empaquetar los addons de tu producto, actualizar tu solución a nuevas versiones y sincronizar recursos y configuración automáticamente.</p>
 <div class="admonition tip">
 <p class="admonition-title">CLI opcional</p>
 <p>El uso de la herramienta por línea de comandos es opcional. Las mismas operaciones están disponibles desde el <strong>instalador de Flexygo Core</strong>, la <strong>extensión para Visual Studio 2022</strong> (<a href="../extension/">ver más</a>) y la <strong>extensión Flexygo Developer Tools para VS Code</strong> (<a href="../extension/">ver más</a>), sin necesidad de usar la terminal.</p>
@@ -1487,35 +1526,146 @@ Si necesitas soporte de autocompletado de parámetros en la consola, puedes inst
 </code></pre></div>
 </blockquote>
 <h2 id="2-uso-basico">2. Uso básico</h2>
-<p>El comando principal es <code>flexygo-product</code>, que dispone de dos subcomandos: <code>nuget</code> y <code>update</code>.</p>
+<p>El comando principal es <code>flexygo-product</code>, que dispone de tres subcomandos: <code>nuget</code>, <code>update</code> y <code>addon</code>.</p>
 <h3 id="a-generar-nuget-personalizado">a) Generar <abbr title="Gestor de paquetes para .NET">NuGet</abbr> personalizado</h3>
 <p>Permite generar los paquetes <abbr title="Gestor de paquetes para .NET">NuGet</abbr> de tu solución.</p>
-<div class="highlight"><pre><span></span><code>flexygo-product<span class="w"> </span>nuget<span class="w"> </span>-s<span class="w"> </span><span class="s2">"RUTA_A_TU_SOLUCION"</span><span class="w"> </span><span class="o">[</span>-v<span class="w"> </span>VERSIÓN<span class="o">]</span><span class="w"> </span><span class="o">[</span>-c<span class="w"> </span>CONFIGURACIÓN<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>flexygo-product<span class="w"> </span>nuget<span class="w"> </span>-s<span class="w"> </span><span class="s2">"RUTA_A_TU_SOLUCION"</span><span class="w"> </span>-v<span class="w"> </span>VERSIÓN<span class="w"> </span><span class="o">[</span>-c<span class="w"> </span>CONFIGURACIÓN<span class="o">]</span><span class="w"> </span><span class="o">[</span>--include-addons<span class="o">]</span>
 </code></pre></div>
 <ul>
 <li><code>-s</code>: Ruta a la solución (<strong>obligatorio</strong>)</li>
-<li><code>-v</code>: Versión a generar del <abbr title="Gestor de paquetes para .NET">NuGet</abbr> (<strong>opcional</strong>; si no se especifica, usará la versión actual)</li>
+<li><code>-v</code>: Versión a generar del <abbr title="Gestor de paquetes para .NET">NuGet</abbr> (<strong>obligatorio</strong>)</li>
 <li><code>-c</code>: Configuración (<code>Release</code> o <code>Debug</code>, por defecto <code>Release</code>)</li>
+<li><code>--include-addons</code>: Empaqueta también los addons de la solución (<strong>opcional</strong>, ver <a href="#c-empaquetar-addons">Empaquetar addons</a>)</li>
 </ul>
 <h3 id="b-actualizar-tu-producto-flexygo">b) Actualizar tu producto Flexygo</h3>
 <p>Actualiza tu solución Flexygo Core a la última versión (o a una versión específica si la indicas).</p>
-<div class="highlight"><pre><span></span><code>flexygo-product<span class="w"> </span>update<span class="w"> </span>-s<span class="w"> </span><span class="s2">"RUTA_A_TU_SOLUCION"</span><span class="w"> </span><span class="o">[</span>-v<span class="w"> </span>VERSIÓN<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>flexygo-product<span class="w"> </span>update<span class="w"> </span>-s<span class="w"> </span><span class="s2">"RUTA_A_TU_SOLUCION"</span><span class="w"> </span><span class="o">[</span>-v<span class="w"> </span>VERSIÓN<span class="o">]</span><span class="w"> </span><span class="o">[</span>-n<span class="w"> </span>NAMESPACE<span class="o">]</span>
 </code></pre></div>
 <ul>
 <li><code>-s</code>: Ruta a la solución (<strong>obligatorio</strong>)</li>
 <li><code>-v</code>: Versión a la que quieres actualizar (<strong>opcional</strong>; si no se especifica, actualiza a la última disponible)</li>
+<li><code>-n</code>: Namespace del producto cuyos NuGets actualizar, p. ej. <code>Flexygo</code> o <code>flxSAT</code> (<strong>opcional</strong>; ver <a href="#productos-que-no-son-flexygo">Productos que no son Flexygo</a>)</li>
 </ul>
 <p>Esto realizará automáticamente:</p>
 <ul>
-<li>Búsqueda de proyectos Frontend, Backend y Database en la solución.</li>
-<li>Comprobación y actualización de los paquetes <abbr title="Gestor de paquetes para .NET">NuGet</abbr> <code>Flexygo.Frontend</code>, <code>Flexygo.Backend</code> , <code>Flexygo.Conf.Database</code> y <code>Flexygo.Library</code> a la versión solicitada o la última disponible.</li>
-<li>Copia y sincronización de los recursos (<code>wwwroot</code>, <code>updater</code>) del <abbr title="Gestor de paquetes para .NET">NuGet</abbr> actualizado a tu proyecto (sobrescribiendo lo existente).</li>
-<li>Merge de los nuevos parámetros en <code>appsettings</code> desde el <abbr title="Gestor de paquetes para .NET">NuGet</abbr> a tu proyecto, manteniendo las claves personalizadas.</li>
+<li>Búsqueda de los proyectos <code>Frontend</code>, <code>Backend</code>, <code>Processes</code> y <code>Conf.Database</code> de la solución.</li>
+<li>Comprobación y actualización de los paquetes <abbr title="Gestor de paquetes para .NET">NuGet</abbr> <code>{Producto}.Frontend</code>, <code>{Producto}.Backend</code>, <code>{Producto}.Library</code> y <code>{Producto}.Conf.Database</code> a la versión solicitada o la última disponible.</li>
+<li>Sustitución de los ficheros <code>conf/appsettings.json</code> y <code>conf/appsettings.Development.json</code> del Frontend y del Backend por los del <abbr title="Gestor de paquetes para .NET">NuGet</abbr> actualizado.</li>
+<li>Fijado de la versión exacta del paquete padre en el <code>.nuspec</code> de tu producto y, si existe, en el <code>Directory.Packages.props</code>.</li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Qué se conserva de tu <code>appsettings</code> y qué no</p>
+<p>En el <strong>Backend</strong>, los <code>appsettings</code> se <strong>reemplazan</strong> por los del <abbr title="Gestor de paquetes para .NET">NuGet</abbr> y después se restauran únicamente tres secciones tuyas: <code>DatabaseNuget</code>, <code>ConnectionStrings</code> y <code>MailSettings</code>. Cualquier otra clave personalizada que hayas añadido a esos ficheros <strong>se pierde</strong>.</p>
+<p>En el <strong>Frontend</strong> se sobrescriben directamente, sin conservar nada.</p>
+<p>Si tienes configuración propia, guárdala fuera de esos ficheros o haz una copia antes de actualizar.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Canal de versiones (prereleases)</p>
+<p>Si la versión que tienes instalada es una prerelease —contiene un guion, como <code>1.5.0-beta.9</code>—, la búsqueda de "última versión" incluye prereleases automáticamente y te mantienes en tu canal. Si estás en una versión estable, solo se consideran versiones estables.</p>
+</div>
+<p>Si tu solución tiene addons, <code>update</code> también actualiza el paquete <code>{Producto}.Library</code> que consume el <code>Processes</code> de cada addon y, si el <code>.nuspec</code> del addon declara esa dependencia, sincroniza su versión fijada.</p>
+<h4 id="productos-que-no-son-flexygo">Productos que no son Flexygo</h4>
+<p>Por defecto la herramienta <strong>detecta sola</strong> el namespace del producto, leyendo la <code>PackageReference</code> de los <code>*.Frontend.csproj</code> de tu solución. Solo necesitas <code>-n</code> si la detección falla porque no encuentra ninguno o encuentra varios distintos. Para ver los namespaces oficiales soportados:</p>
+<div class="highlight"><pre><span></span><code>flexygo-product<span class="w"> </span>products
+</code></pre></div>
+<h3 id="c-empaquetar-addons">c) Empaquetar addons</h3>
+<p>Un <strong>addon</strong> es una extensión que se instala sobre un producto Flexygo ya desplegado. Se distribuye como un <abbr title="Gestor de paquetes para .NET">NuGet</abbr> propio y tiene <strong>su propio ciclo de versiones</strong>, independiente del producto. Un producto puede tener varios addons.</p>
+<p>Se crean con la plantilla, ejecutando el comando <strong>desde la carpeta que contiene el <code>.sln</code> del producto</strong>:</p>
+<div class="highlight"><pre><span></span><code>dotnet<span class="w"> </span>new<span class="w"> </span>flexygoaddon<span class="w"> </span>--name<span class="w"> </span>Facturacion<span class="w"> </span>--allow-scripts<span class="w"> </span>yes
+</code></pre></div>
+<p>Cada addon vive en su propia carpeta con un <code>config/module.json</code> y un único <code>.nuspec</code> en la raíz. Esos dos ficheros son los que la herramienta usa para detectarlo, así que <strong>el nombre del addon es libre</strong> y no tiene por qué derivar del nombre del producto.</p>
+<div class="highlight"><pre><span></span><code>flexygo-product<span class="w"> </span>addon<span class="w"> </span>-s<span class="w"> </span><span class="s2">"RUTA_A_TU_SOLUCION"</span><span class="w"> </span><span class="o">[</span>-a<span class="w"> </span>NOMBRE<span class="o">]</span><span class="w"> </span><span class="o">[</span>-v<span class="w"> </span>VERSIÓN<span class="o">]</span><span class="w"> </span><span class="o">[</span>-c<span class="w"> </span>CONFIGURACIÓN<span class="o">]</span>
+</code></pre></div>
+<ul>
+<li><code>-s</code>: Ruta a la solución (<strong>obligatorio</strong>)</li>
+<li><code>-a</code>: Nombre del addon a empaquetar (<strong>opcional</strong>, repetible; si no se indica, se empaquetan todos los detectados)</li>
+<li><code>-v</code>: Versión del addon (<strong>opcional</strong>; si no se indica, se usa la que ya declara su <code>.nuspec</code>)</li>
+<li><code>-c</code>: Configuración (<code>Release</code> o <code>Debug</code>, por defecto <code>Release</code>)</li>
+</ul>
+<p>Ejemplos:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Todos los addons, cada uno con la versión de su propio .nuspec</span>
+flexygo-product<span class="w"> </span>addon<span class="w"> </span>-s<span class="w"> </span><span class="s2">"C:\Proyectos\CRMCore"</span>
+
+<span class="c1"># Solo uno</span>
+flexygo-product<span class="w"> </span>addon<span class="w"> </span>-s<span class="w"> </span><span class="s2">"C:\Proyectos\CRMCore"</span><span class="w"> </span>-a<span class="w"> </span>Facturacion
+
+<span class="c1"># Varios addons concretos</span>
+flexygo-product<span class="w"> </span>addon<span class="w"> </span>-s<span class="w"> </span><span class="s2">"C:\Proyectos\CRMCore"</span><span class="w"> </span>-a<span class="w"> </span>Facturacion<span class="w"> </span>-a<span class="w"> </span>Portal
+
+<span class="c1"># Subir la versión de un addon y empaquetarlo</span>
+flexygo-product<span class="w"> </span>addon<span class="w"> </span>-s<span class="w"> </span><span class="s2">"C:\Proyectos\CRMCore"</span><span class="w"> </span>-a<span class="w"> </span>Facturacion<span class="w"> </span>-v<span class="w"> </span><span class="m">2</span>.0.0.5
+</code></pre></div>
+<p>Al indicar <code>-v</code>, la versión <strong>se escribe en el <code>.nuspec</code> del addon</strong> y queda ahí para las siguientes ejecuciones, así que recuerda commitear ese cambio. Como cada addon tiene su propio ciclo, <code>-v</code> solo se admite cuando has seleccionado <strong>un único addon</strong> con <code>-a</code>; para subir varios, lanza el comando una vez por addon.</p>
+<div class="admonition warning">
+<p class="admonition-title">El orden importa</p>
+<p>El subcomando <code>nuget</code> <strong>limpia la carpeta <code>publish\nuget</code></strong> antes de generar. Si vas a generar producto y addons por separado, ejecuta siempre <code>nuget</code> <strong>antes</strong> que <code>addon</code>, o perderás los paquetes de addon ya generados.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Producto y addons en una sola pasada</p>
+<p>Para el flujo de release, <code>flexygo-product nuget -s "RUTA" -v 1.2.3 --include-addons</code> genera los paquetes del producto y, a continuación, los de todos los addons. Los addons <strong>nunca heredan</strong> la versión indicada en <code>-v</code>: cada uno se empaqueta con la de su propio <code>.nuspec</code>. Para cambiarla, usa el subcomando <code>addon</code> con <code>-v</code>.</p>
+</div>
+<p>Si un addon falla al compilar o empaquetar, <strong>no se aborta el resto</strong>: los demás addons y los paquetes del producto se generan igualmente, los fallidos se listan en el resumen final y el comando termina con código de salida <code>3</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Los proyectos de base de datos se compilan siempre en Release</p>
+<p>El <code>.nuspec</code> que genera la plantilla del addon toma los <code>.dacpac</code> de <code>bin\Release</code>. Por eso sus proyectos de base de datos se compilan en <code>Release</code> aunque indiques <code>-c Debug</code> — si no, se empaquetaría un <code>.dacpac</code> obsoleto o fallaría el empaquetado. La opción <code>-c</code> sí se aplica al proyecto <code>Processes</code> del addon.</p>
+</div>
 <h2 id="3-opciones-disponibles">3. Opciones disponibles</h2>
 <p>Puedes ver todas las opciones en cualquier momento con:</p>
 <div class="highlight"><pre><span></span><code>flexygo-product<span class="w"> </span>--help
 </code></pre></div>
+<p>Y la ayuda concreta de cada subcomando, que documenta su comportamiento en detalle:</p>
+<div class="highlight"><pre><span></span><code>flexygo-product<span class="w"> </span>update<span class="w"> </span>--help
+flexygo-product<span class="w"> </span>nuget<span class="w">  </span>--help
+flexygo-product<span class="w"> </span>addon<span class="w">  </span>--help
+</code></pre></div>
+<h3 id="codigos-de-salida">Códigos de salida</h3>
+<p>Útiles si integras la herramienta en un <em>pipeline</em> de CI:</p>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Código</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>update</code></td>
+<td><code>0</code></td>
+<td>Todo correcto</td>
+</tr>
+<tr>
+<td><code>update</code></td>
+<td><code>1</code></td>
+<td>Error; el comando aborta en el primer fallo</td>
+</tr>
+<tr>
+<td><code>nuget</code></td>
+<td><code>0</code></td>
+<td>Todo correcto</td>
+</tr>
+<tr>
+<td><code>nuget</code></td>
+<td><code>2</code></td>
+<td>Error generando los paquetes del producto</td>
+</tr>
+<tr>
+<td><code>nuget</code></td>
+<td><code>3</code></td>
+<td>El producto se generó, pero falló algún addon</td>
+</tr>
+<tr>
+<td><code>addon</code></td>
+<td><code>0</code></td>
+<td>Todo correcto</td>
+</tr>
+<tr>
+<td><code>addon</code></td>
+<td><code>3</code></td>
+<td>Falló al menos un addon</td>
+</tr>
+</tbody>
+</table>
 <h2 id="4-notas-importantes">4. Notas importantes</h2>
 <ul>
 <li>Es recomendable realizar una copia de seguridad de tu solución antes de actualizar paquetes y recursos, especialmente si tienes modificaciones manuales en las carpetas <code>wwwroot</code>.</li>
@@ -1597,6 +1747,30 @@ Si necesitas soporte de autocompletado de parámetros en la consola, puedes inst
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="b) Actualizar tu producto Flexygo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#productos-que-no-son-flexygo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Productos que no son Flexygo
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-empaquetar-addons" class="md-nav__link">
+    <span class="md-ellipsis">
+      c) Empaquetar addons
+    </span>
+  </a>
+  
 </li>
         
       </ul>
@@ -1610,6 +1784,21 @@ Si necesitas soporte de autocompletado de parámetros en la consola, puedes inst
       3. Opciones disponibles
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="3. Opciones disponibles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#codigos-de-salida" class="md-nav__link">
+    <span class="md-ellipsis">
+      Códigos de salida
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       

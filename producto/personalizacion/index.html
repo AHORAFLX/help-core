@@ -1590,10 +1590,14 @@
 <li>Para archivos <strong>únicos</strong> (<code>manifest.json</code>, <code>favicon.ico</code>), solo se usa el archivo encontrado con mayor prioridad (<em>first-found-wins</em>).</li>
 </ul>
 <h3 id="descubrimiento-automatico-de-la-carpeta-de-producto">Descubrimiento automático de la carpeta de producto</h3>
-<p>La carpeta de producto se <strong>descubre automáticamente</strong> al iniciar la aplicación — no necesitas configurar su nombre. El sistema explora los subdirectorios de <code>wwwroot</code> en busca de uno que contenga la misma estructura de directorios que un asset nativo de Flexygo. La primera coincidencia gana.</p>
+<p>La carpeta de producto se <strong>descubre automáticamente</strong> al iniciar la aplicación — no necesitas configurar su nombre. El sistema explora los subdirectorios de <code>wwwroot</code> y considera carpeta de producto al <strong>primero que contenga el archivo marcador <code>css/theme.less</code></strong>. La primera coincidencia gana.</p>
+<div class="admonition danger">
+<p class="admonition-title">El archivo <code>css/theme.less</code> es obligatorio</p>
+<p>Una carpeta de <code>wwwroot</code> <strong>solo se detecta como carpeta de producto si contiene <code>css/theme.less</code></strong>. El archivo puede estar <strong>vacío</strong>, pero debe existir. Sin él, la carpeta se ignora por completo y todas tus personalizaciones de producto (CSS, JS, <code>favicon.ico</code>, <code>manifest.json</code>…) quedarán sin efecto, degradándose el sistema a la cadena de 2 niveles (Instalación → Flexygo).</p>
+</div>
 <div class="admonition info">
 <p class="admonition-title">Convención: carpeta creada por el instalador</p>
-<p>El <strong>instalador de Flexygo Core</strong> ya crea automáticamente la carpeta de producto durante la creación o migración de un proyecto. Esta es la carpeta que debes usar como convención para todas tus personalizaciones a nivel de producto. No es necesario que crees una manualmente ni que adivines el nombre — utiliza la que el instalador ha generado.</p>
+<p>El <strong>instalador de Flexygo Core</strong> ya crea automáticamente la carpeta de producto —con su <code>css/theme.less</code>— durante la creación o migración de un proyecto. Esta es la carpeta que debes usar como convención para todas tus personalizaciones a nivel de producto. No es necesario que crees una manualmente ni que adivines el nombre — utiliza la que el instalador ha generado.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Nombres de carpeta válidos</p>
@@ -1607,7 +1611,7 @@
     manifest.json                    ← Manifiesto PWA
     favicon.ico                      ← Favicon del producto
     css/
-      theme.less                     ← Variables de tema del producto
+      theme.less                     ← OBLIGATORIO: marcador de carpeta de producto (puede estar vacío) + variables de tema
       views/
         account/
           account.css                ← CSS genérico de cuenta
@@ -1699,6 +1703,10 @@
 <hr>
 <h3 id="themeless-variables-de-tema-y-propiedades-css"><code>theme.less</code> — Variables de Tema y Propiedades CSS</h3>
 <p><strong>Propósito:</strong> Recibir valores específicos del producto desde la base de datos, asignarlos a variables Less y exponerlos como propiedades CSS personalizadas (<code>--*</code>).</p>
+<div class="admonition danger">
+<p class="admonition-title">Doble función: también es el marcador de carpeta de producto</p>
+<p>La presencia de <code>{producto}/css/theme.less</code> es lo que hace que Flexygo reconozca <code>{producto}/</code> como carpeta de producto. <strong>Debe existir siempre</strong> en tu carpeta de producto, aunque sea un archivo vacío. Si no vas a definir variables de tema propias, créalo igualmente vacío.</p>
+</div>
 <p><strong>Resolución:</strong> Se concatenan los 3 niveles (Flexygo → Producto → Instalación). El pipeline <code>ReplaceLessVars</code> procesa el <code>theme.less</code> de cada nivel: los placeholders <code>dbColor()</code>/<code>dbSize()</code> se reemplazan con valores calculados desde base de datos, y las variables Less se convierten en propiedades CSS mediante <code>:root { --*: @variable; }</code>.</p>
 <table>
 <thead>
@@ -2063,8 +2071,9 @@
 <hr>
 <h2 id="limitaciones-y-comportamiento-de-degradacion">Limitaciones y Comportamiento de Degradación</h2>
 <ul>
-<li><strong>Detección de carpeta de producto</strong> se ejecuta una sola vez al inicio. Si no se encuentra ninguna carpeta de producto, el sistema se degrada a una cadena de 2 niveles (Instalación → Flexygo).</li>
-<li><strong>Múltiples carpetas de producto</strong> generan una advertencia en el log; solo se usa la primera carpeta encontrada.</li>
+<li><strong>Detección de carpeta de producto</strong> se ejecuta una sola vez al inicio. Se identifica la carpeta de producto por la presencia del archivo marcador <code>css/theme.less</code> en un subdirectorio de <code>wwwroot</code>. Si ninguna carpeta contiene ese archivo, el sistema se degrada a una cadena de 2 niveles (Instalación → Flexygo).</li>
+<li><strong><code>css/theme.less</code> ausente</strong> en tu carpeta de producto hace que <strong>toda la carpeta se ignore</strong> — no solo el tema, sino también CSS/JS de vistas, <code>favicon.ico</code> y <code>manifest.json</code> a nivel de producto. Créalo aunque sea vacío.</li>
+<li><strong>Múltiples carpetas de producto</strong> (varios subdirectorios con <code>css/theme.less</code>) generan una advertencia en el log; solo se usa la primera carpeta encontrada.</li>
 <li><strong>Archivos ausentes</strong> en cualquier nivel se omiten silenciosamente — solo se emiten los archivos que existen.</li>
 <li><strong><code>manifest.json</code> y <code>favicon.ico</code></strong> usan el patrón <em>first-found-wins</em>; el fallback nativo de Flexygo siempre está disponible.</li>
 <li><strong>Sobrescritura de vistas</strong> (archivos <code>.cshtml</code>) no está soportada en la versión actual. Las sobrescrituras de CSS/JS cubren la mayoría de necesidades de personalización.</li>
